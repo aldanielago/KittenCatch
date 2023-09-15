@@ -90,6 +90,20 @@ body {
     }
 }
 
+@keyframes subir_derecho {
+    0% {
+        transform: rotate(0);
+    }
+    10% {
+        left: -50px;
+        transform: rotate(60deg);
+    }
+    20% {
+        left: -40px;
+        transform: rotate(80deg);
+    }
+}
+
 // Patita
 .layer:nth-child(1){
     @include posicion(1, 90px, 90px, 95px, auto, auto, 15px, inner);
@@ -238,7 +252,7 @@ body {
 
 // Patita
 .layer:nth-child(6){
-    @include posicion(6, 90px, 120px, 200px, auto, 0, auto, inner);
+    @include posicion(6, 90px, 120px, 160px, auto, -120px, auto, inner);
     transform: rotate(50deg);
 
     .dedito1 {
@@ -279,6 +293,10 @@ body {
         left: 22px;
         border: 1px solid $borde;
     }
+
+    transform-origin: bottom left;
+    animation: subir_derecho 1s infinite;
+    animation-delay: 4s;
 }
 
 // Patita

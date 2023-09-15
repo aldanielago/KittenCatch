@@ -51,6 +51,19 @@ body {
     right: 40px;
   }
 }
+@keyframes subir_derecho {
+  0% {
+    transform: rotate(0);
+  }
+  10% {
+    left: -50px;
+    transform: rotate(60deg);
+  }
+  20% {
+    left: -40px;
+    transform: rotate(80deg);
+  }
+}
 .layer:nth-child(1) {
   z-index: 1;
   width: 90px;
@@ -294,12 +307,15 @@ body {
   z-index: 6;
   width: 90px;
   height: 120px;
-  top: 200px;
+  top: 160px;
   bottom: auto;
-  left: 0;
+  left: -120px;
   right: auto;
   background: inner;
   transform: rotate(50deg);
+  transform-origin: bottom left;
+  animation: subir_derecho 1s infinite;
+  animation-delay: 4s;
 }
 .layer:nth-child(6) .dedito1 {
   position: absolute;
