@@ -9,442 +9,442 @@ $paw5: #C8B6A6;
 $borde: rgb(204, 201, 201);
 
 body {
-    display: grid;
-    place-items: center;
-    background: $background;
+  display: grid;
+  place-items: center;
+  background: $background;
 
-    margin: 0;
-    height: 100vh;
-    width: 100%;
+  margin: 0;
+  height: 100vh;
+  width: 100%;
 }
 
 .phone {
-    position: relative;
-    background: $phone;
-    overflow: hidden;
+  position: relative;
+  background: $phone;
+  overflow: hidden;
 
-    width: 300px;
-    height: 550px;
-    border: 7px solid #a57777;
+  width: 300px;
+  height: 550px;
+  border: 7px solid #a57777;
 
-    box-shadow: 0px 0px 15px 3px #4D4545;
-    border-radius: 30px;
+  box-shadow: 0px 0px 15px 3px #4D4545;
+  border-radius: 30px;
 }
 
 .layer {
-    position: absolute;
+  position: absolute;
 }
 
 .paw {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 @mixin posicion($z, $w, $h, $top, $botton, $left, $rigth, $back) {
-    z-index: $z;
-    width: $w;
-    height: $h;
-    top: $top;
-    bottom: $botton;
-    left: $left;
-    right: $rigth;
+  z-index: $z;
+  width: $w;
+  height: $h;
+  top: $top;
+  bottom: $botton;
+  left: $left;
+  right: $rigth;
 
-    background: $back;
+  background: $back;
 }
 
 @mixin dedito($w, $h, $back, $bor, $top, $left){
-    position: absolute;
-    width: $w;
-    height: $h;
-    border-radius: 50%;
-    background-color: $back;
-    border: 0.1px solid rgb(204, 201, 201);
-    top: $top;
-    left: $left;
+  position: absolute;
+  width: $w;
+  height: $h;
+  border-radius: 50%;
+  background-color: $back;
+  border: 0.1px solid rgb(204, 201, 201);
+  top: $top;
+  left: $left;
 }
 
 // Animacion para subir y bajar
 @keyframes subir {
-    0% {
-        transform: translateY(0px);
-    }
-    10% {
-        transform: translateY(-70px);
-    }
-    20% {
-        transform: translateY(0px);
-    }
+  0% {
+    transform: translateY(0px);
+  }
+  10% {
+    transform: translateY(-70px);
+  }
+  20% {
+    transform: translateY(0px);
+  }
 }
 
 @keyframes subir_izquierdo {
-    0% {
-        right: 80px;
-    }
-    10% {
-        transform: rotate(-60deg);
-    }
-    20% {
-        transform: rotate(-90deg);
-    }
-    30% {
-        right: 40px;
-    }
+  0% {
+    right: 80px;
+  }
+  10% {
+    transform: rotate(-60deg);
+  }
+  20% {
+    transform: rotate(-90deg);
+  }
+  30% {
+    right: 40px;
+  }
 }
 
 @keyframes subir_derecho {
-    0% {
-        transform: rotate(0);
-    }
-    10% {
-        left: -50px;
-        transform: rotate(60deg);
-    }
-    20% {
-        left: -40px;
-        transform: rotate(80deg);
-    }
+  0% {
+    transform: rotate(0);
+  }
+  10% {
+    left: -50px;
+    transform: rotate(60deg);
+  }
+  20% {
+    left: -40px;
+    transform: rotate(80deg);
+  }
 }
 
 // Patita
 .layer:nth-child(1){
-    @include posicion(1, 90px, 90px, 95px, auto, auto, 15px, inner);
+  @include posicion(1, 90px, 90px, 95px, auto, auto, 15px, inner);
 
-    .dedito1 {
-        @include dedito(25px, 25px, $paw2, rgb(136, 135, 135), 18px, 12px);
-    }
+  .dedito1 {
+    @include dedito(25px, 25px, $paw2, rgb(136, 135, 135), 18px, 12px);
+  }
 
-    .dedito2 {
-        @include dedito(25px, 25px, $paw2, $paw3, 8px, 22px);
-    }
+  .dedito2 {
+    @include dedito(25px, 25px, $paw2, $paw3, 8px, 22px);
+  }
 
-    .dedito3 {
-        @include dedito(25px, 25px, $paw2, $paw3, 8px, 32px);
-    }
+  .dedito3 {
+    @include dedito(25px, 25px, $paw2, $paw3, 8px, 32px);
+  }
 
-    .dedito4 {
-        @include dedito(25px, 25px, $paw2, $paw3, 18px, 46px);
-    }
+  .dedito4 {
+    @include dedito(25px, 25px, $paw2, $paw3, 18px, 46px);
+  }
 
-    .mano {
-        position: absolute;
-        width: 36px;
-        height: 40px;
-        border-radius: 40%;
-        background-color: $paw2;
-        top: 20px;
-        left: 22px;
-    }
+  .mano {
+    position: absolute;
+    width: 36px;
+    height: 40px;
+    border-radius: 40%;
+    background-color: $paw2;
+    top: 20px;
+    left: 22px;
+  }
 
-    .tronco {
-        position: absolute;
-        width: 40px;
-        height: 60px;
-        border-radius: 40%;
-        background-color: $paw2;
-        top: 30px;
-        left: 22px;
-    }
+  .tronco {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    border-radius: 40%;
+    background-color: $paw2;
+    top: 30px;
+    left: 22px;
+  }
 
-    animation: subir 3s infinite;
+  animation: subir 3s infinite;
 }
 
 // Patita
 .layer:nth-child(2){
-    @include posicion(2, 90px, 90px, 145px, auto, 16px, auto, inner);
+  @include posicion(2, 90px, 90px, 145px, auto, 16px, auto, inner);
 
-    .dedito1 {
-        @include dedito(25px, 25px, $paw2, $paw3, 18px, 12px);
-    }
+  .dedito1 {
+    @include dedito(25px, 25px, $paw2, $paw3, 18px, 12px);
+  }
 
-    .dedito2 {
-        @include dedito(25px, 25px, $paw2, $paw3, 8px, 22px);
-    }
+  .dedito2 {
+    @include dedito(25px, 25px, $paw2, $paw3, 8px, 22px);
+  }
 
-    .dedito3 {
-        @include dedito(25px, 25px, $paw2, $paw3, 8px, 32px);
-    }
+  .dedito3 {
+    @include dedito(25px, 25px, $paw2, $paw3, 8px, 32px);
+  }
 
-    .dedito4 {
-        @include dedito(25px, 25px, $paw2, $paw3, 18px, 46px);
-    }
+  .dedito4 {
+    @include dedito(25px, 25px, $paw2, $paw3, 18px, 46px);
+  }
 
-    .mano {
-        position: absolute;
-        width: 36px;
-        height: 40px;
-        border-radius: 40%;
-        background-color: $paw2;
-        top: 20px;
-        left: 22px;
-    }
+  .mano {
+    position: absolute;
+    width: 36px;
+    height: 40px;
+    border-radius: 40%;
+    background-color: $paw2;
+    top: 20px;
+    left: 22px;
+  }
 
-    .tronco {
-        position: absolute;
-        width: 40px;
-        height: 60px;
-        border-radius: 40%;
-        background-color: $paw2;
-        top: 30px;
-        left: 22px;
-    }
+  .tronco {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    border-radius: 40%;
+    background-color: $paw2;
+    top: 30px;
+    left: 22px;
+  }
 
-    animation: subir 2s infinite;
+  animation: subir 2s infinite;
 }
 
 // Patita
 .layer:nth-child(3){
-    @include posicion(3, 90px, 90px, 80px, auto, auto, 40px, inner);
-    transform: rotate(-90deg);
+  @include posicion(3, 90px, 90px, 80px, auto, auto, 40px, inner);
+  transform: rotate(-90deg);
 
-    .dedito1 {
-        @include dedito(25px, 25px, $paw2, $paw3, 18px, 12px);
-    }
+  .dedito1 {
+    @include dedito(25px, 25px, $paw2, $paw3, 18px, 12px);
+  }
 
-    .dedito2 {
-        @include dedito(25px, 25px, $paw2, $paw3, 8px, 22px);
-    }
+  .dedito2 {
+    @include dedito(25px, 25px, $paw2, $paw3, 8px, 22px);
+  }
 
-    .dedito3 {
-        @include dedito(25px, 25px, $paw2, $paw3, 8px, 32px);
-    }
+  .dedito3 {
+    @include dedito(25px, 25px, $paw2, $paw3, 8px, 32px);
+  }
 
-    .dedito4 {
-        @include dedito(25px, 25px, $paw2, $paw3, 18px, 46px);
-    }
+  .dedito4 {
+    @include dedito(25px, 25px, $paw2, $paw3, 18px, 46px);
+  }
 
-    .mano {
-        position: absolute;
-        width: 36px;
-        height: 40px;
-        border-radius: 40%;
-        background-color: $paw2;
-        top: 20px;
-        left: 22px;
-    }
+  .mano {
+    position: absolute;
+    width: 36px;
+    height: 40px;
+    border-radius: 40%;
+    background-color: $paw2;
+    top: 20px;
+    left: 22px;
+  }
 
-    .tronco {
-        position: absolute;
-        width: 40px;
-        height: 60px;
-        border-radius: 40%;
-        background-color: $paw2;
-        top: 30px;
-        left: 22px;
-    }
+  .tronco {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    border-radius: 40%;
+    background-color: $paw2;
+    top: 30px;
+    left: 22px;
+  }
 
-    transform-origin: bottom right;
-    animation: subir_izquierdo 3s infinite;
-    animation-delay: 1s;
+  transform-origin: bottom right;
+  animation: subir_izquierdo 3s infinite;
+  animation-delay: 1s;
 }
 
 // Pared
 .layer:nth-child(4){
-    @include posicion(4, 120px, 200px, 100px, auto, auto, 0, $walls);
-    border: 1px solid white;
-    border-radius: 20px;
+  @include posicion(4, 120px, 200px, 100px, auto, auto, 0, $walls);
+  border: 1px solid white;
+  border-radius: 20px;
 }
 
 // Pared
 .layer:nth-child(5){
-    @include posicion(5, 120px, 210px, 150px, auto, 0, auto, $walls);
-    border: 1px solid white;
-    border-radius: 20px;
+  @include posicion(5, 120px, 210px, 150px, auto, 0, auto, $walls);
+  border: 1px solid white;
+  border-radius: 20px;
 }
 
 // Patita
 .layer:nth-child(6){
-    @include posicion(6, 90px, 120px, 160px, auto, -120px, auto, inner);
-    transform: rotate(50deg);
+  @include posicion(6, 90px, 120px, 160px, auto, -120px, auto, inner);
+  transform: rotate(50deg);
 
-    .dedito1 {
-        @include dedito(25px, 25px, $paw2, $paw3, 18px, 12px);
-    }
+  .dedito1 {
+    @include dedito(25px, 25px, $paw2, $paw3, 18px, 12px);
+  }
 
-    .dedito2 {
-        @include dedito(25px, 25px, $paw2, $paw3, 8px, 22px);
-    }
+  .dedito2 {
+    @include dedito(25px, 25px, $paw2, $paw3, 8px, 22px);
+  }
 
-    .dedito3 {
-        @include dedito(25px, 25px, $paw2, $paw3, 8px, 32px);
-    }
+  .dedito3 {
+    @include dedito(25px, 25px, $paw2, $paw3, 8px, 32px);
+  }
 
-    .dedito4 {
-        @include dedito(25px, 25px, $paw2, $paw3, 18px, 46px);
-    }
+  .dedito4 {
+    @include dedito(25px, 25px, $paw2, $paw3, 18px, 46px);
+  }
 
-    .mano {
-        position: absolute;
-        width: 36px;
-        height: 40px;
-        border-radius: 40%;
-        background-color: $paw2;
-        top: 20px;
-        left: 22px;
-        z-index: 3;
-    }
+  .mano {
+    position: absolute;
+    width: 36px;
+    height: 40px;
+    border-radius: 40%;
+    background-color: $paw2;
+    top: 20px;
+    left: 22px;
+    z-index: 3;
+  }
 
-    .tronco {
-        z-index: 2;
-        position: absolute;
-        width: 40px;
-        height: 90px;
-        border-radius: 40%;
-        background-color: $paw2;
-        top: 30px;
-        left: 22px;
-        border: 1px solid $borde;
-    }
+  .tronco {
+    z-index: 2;
+    position: absolute;
+    width: 40px;
+    height: 90px;
+    border-radius: 40%;
+    background-color: $paw2;
+    top: 30px;
+    left: 22px;
+    border: 1px solid $borde;
+  }
 
-    transform-origin: bottom left;
-    animation: subir_derecho 1s infinite;
-    animation-delay: 4s;
+  transform-origin: bottom left;
+  animation: subir_derecho 1s infinite;
+  animation-delay: 4s;
 }
 
 // Patita
 .layer:nth-child(7){
-    @include posicion(7, 90px, 90px, 245px, auto, auto, 15px, inner);
-    animation: subir 4s infinite;
+  @include posicion(7, 90px, 90px, 245px, auto, auto, 15px, inner);
+  animation: subir 4s infinite;
 
-    .dedito1 {
-        @include dedito(25px, 25px, $paw2, $paw3, 20px, 10px);
-    }
+  .dedito1 {
+    @include dedito(25px, 25px, $paw2, $paw3, 20px, 10px);
+  }
 
-    .dedito2 {
-        @include dedito(25px, 25px, $paw2, $paw3, 10px, 18px);
-    }
+  .dedito2 {
+    @include dedito(25px, 25px, $paw2, $paw3, 10px, 18px);
+  }
 
-    .dedito3 {
-        @include dedito(25px, 25px, $paw2, $paw3, 8px, 32px);
-    }
+  .dedito3 {
+    @include dedito(25px, 25px, $paw2, $paw3, 8px, 32px);
+  }
 
-    .dedito4 {
-        @include dedito(25px, 25px, $paw2, $paw3, 18px, 46px);
-    }
+  .dedito4 {
+    @include dedito(25px, 25px, $paw2, $paw3, 18px, 46px);
+  }
 
-    .mano {
-        position: absolute;
-        width: 36px;
-        height: 40px;
-        border-radius: 40%;
-        background-color: $paw2;
-        top: 20px;
-        left: 22px;
-        z-index: -1;
-        border: 0.1px solid $borde;
-    }
+  .mano {
+    position: absolute;
+    width: 36px;
+    height: 40px;
+    border-radius: 40%;
+    background-color: $paw2;
+    top: 20px;
+    left: 22px;
+    z-index: -1;
+    border: 0.1px solid $borde;
+  }
 
-    .tronco {
-        position: absolute;
-        width: 40px;
-        height: 60px;
-        border-radius: 40%;
-        background-color: $paw2;
-        top: 30px;
-        left: 22px;
-    }
-
-    
+  .tronco {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    border-radius: 40%;
+    background-color: $paw2;
+    top: 30px;
+    left: 22px;
+  }
 }
 
 // Pared
 .layer:nth-child(8){
-    @include posicion(8, 170px, 210px, 250px, auto, auto, 0, $walls);
-    border: 1px solid white;
-    border-radius: 20px;
+  @include posicion(8, 170px, 210px, 250px, auto, auto, 0, $walls);
+  border: 1px solid white;
+  border-radius: 20px;
 }
 
 // Pared
 .layer:nth-child(9){
-    @include posicion(9, 190px, 210px, auto, 0, 0, auto, $walls);
-    border: 1px solid white;
-    border-radius: 20px;
+  @include posicion(9, 190px, 210px, auto, 0, 0, auto, $walls);
+  border: 1px solid white;
+  border-radius: 20px;
 }
 
 // Patita
 .layer:nth-child(10){
-    @include posicion(10, 90px, 120px, auto, 0, 50px, auto, inner);
-    transform: rotate(15deg);
+  @include posicion(10, 90px, 120px, auto, 0, 50px, auto, inner);
+  transform: rotate(15deg);
 
-    .dedito1 {
-        @include dedito(25px, 25px, $paw2, $paw3, 18px, 12px);
-    }
+  .dedito1 {
+    @include dedito(25px, 25px, $paw2, $paw3, 18px, 12px);
+  }
 
-    .dedito2 {
-        @include dedito(25px, 25px, $paw2, $paw3, 8px, 22px);
-    }
+  .dedito2 {
+    @include dedito(25px, 25px, $paw2, $paw3, 8px, 22px);
+  }
 
-    .dedito3 {
-        @include dedito(25px, 25px, $paw2, $paw3, 8px, 32px);
-    }
+  .dedito3 {
+    @include dedito(25px, 25px, $paw2, $paw3, 8px, 32px);
+  }
 
-    .dedito4 {
-        @include dedito(25px, 25px, $paw2, $paw3, 18px, 46px);
-    }
+  .dedito4 {
+    @include dedito(25px, 25px, $paw2, $paw3, 18px, 46px);
+  }
 
-    .mano {
-        z-index: 3;
-        position: absolute;
-        width: 36px;
-        height: 40px;
-        border-radius: 40%;
-        background-color: $paw2;
-        top: 20px;
-        left: 22px;
-    }
+  .mano {
+    z-index: 3;
+    position: absolute;
+    width: 36px;
+    height: 40px;
+    border-radius: 40%;
+    background-color: $paw2;
+    top: 20px;
+    left: 22px;
+  }
 
-    .tronco {
-        z-index: 2;
-        border: 0.1px solid $borde;
-        position: absolute;
-        width: 40px;
-        height: 100px;
-        border-radius: 40%;
-        background-color: $paw2;
-        top: 30px;
-        left: 22px;
-    }
+  .tronco {
+    z-index: 2;
+    border: 0.1px solid $borde;
+    position: absolute;
+    width: 40px;
+    height: 100px;
+    border-radius: 40%;
+    background-color: $paw2;
+    top: 30px;
+    left: 22px;
+  }
 }
 
 //Patita
 .layer:nth-child(11){
-    @include posicion(8, 90px, 130px, auto, 52px, auto, 0, inner);
-    transform: rotate(-48deg);
+  @include posicion(8, 90px, 130px, auto, 52px, auto, 0, inner);
+  transform: rotate(-48deg);
 
-    .dedito1 {
-        @include dedito(25px, 25px, $paw2, $paw3, 18px, 12px);
-    }
+  .dedito1 {
+    @include dedito(25px, 25px, $paw2, $paw3, 18px, 12px);
+  }
 
-    .dedito2 {
-        @include dedito(25px, 25px, $paw2, $paw3, 8px, 22px);
-    }
+  .dedito2 {
+    @include dedito(25px, 25px, $paw2, $paw3, 8px, 22px);
+  }
 
-    .dedito3 {
-        @include dedito(25px, 25px, $paw2, $paw3, 8px, 32px);
-    }
+  .dedito3 {
+    @include dedito(25px, 25px, $paw2, $paw3, 8px, 32px);
+  }
 
-    .dedito4 {
-        @include dedito(25px, 25px, $paw2, $paw3, 18px, 46px);
-    }
+  .dedito4 {
+    @include dedito(25px, 25px, $paw2, $paw3, 18px, 46px);
+  }
 
-    .mano {
-        z-index: 3;
-        position: absolute;
-        width: 36px;
-        height: 40px;
-        border-radius: 40%;
-        background-color: $paw2;
-        top: 20px;
-        left: 22px;
-    }
+  .mano {
+    z-index: 3;
+    position: absolute;
+    width: 36px;
+    height: 40px;
+    border-radius: 40%;
+    background-color: $paw2;
+    top: 20px;
+    left: 22px;
+  }
 
-    .tronco {
-        z-index: 2;
-        border: 0.1px solid $borde;
-        position: absolute;
-        width: 40px;
-        height: 100px;
-        border-radius: 40%;
-        background-color: $paw2;
-        top: 30px;
-        left: 22px;
-    }
+  .tronco {
+    z-index: 2;
+    border: 0.1px solid $borde;
+    position: absolute;
+    width: 40px;
+    height: 100px;
+    border-radius: 40%;
+    background-color: $paw2;
+    top: 30px;
+    left: 22px;
+  }
 }
+
+@import "utils.scss";
