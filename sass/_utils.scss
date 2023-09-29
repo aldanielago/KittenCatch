@@ -1,10 +1,32 @@
-.img {
+.general-container {
+  width: 100%;
+}
+
+#container-random-images {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+.img_cat {
+  position: relative;
+
   width: 300px;
-  max-height: 500px;
+  height: 300px;
+  margin: 20px;
+
   object-fit: cover;
   border-radius: 5px;
   border: 0.5px solid black;
-  margin: 20px;
+}
+
+.btn_dislike {
+  position: relative;
+  top: 5px;
+  left: 5px;
+
+  border: none;
+  background-color: inherit;
 }
 
 .invisible {

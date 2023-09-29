@@ -8,14 +8,9 @@ $paw4: #8D7B68;
 $paw5: #C8B6A6;
 $borde: rgb(204, 201, 201);
 
-body {
-  display: grid;
-  place-items: center;
-  background: $background;
-
+* {
+  box-sizing: border-box;
   margin: 0;
-  height: 100vh;
-  width: 100%;
 }
 
 .phone {

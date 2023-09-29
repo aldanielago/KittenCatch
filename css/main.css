@@ -1,10 +1,6 @@
-body {
-  display: grid;
-  place-items: center;
-  background: #222222;
+* {
+  box-sizing: border-box;
   margin: 0;
-  height: 100vh;
-  width: 100%;
 }
 
 .phone {
@@ -623,14 +619,33 @@ body {
   left: 22px;
 }
 
-.img {
+.general-container {
+  width: 100%;
+}
+
+#container-random-images {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+.img_cat {
+  position: relative;
   width: 300px;
-  max-height: 500px;
+  height: 300px;
+  margin: 20px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px;
   border: 0.5px solid black;
-  margin: 20px;
+}
+
+.btn_dislike {
+  position: relative;
+  top: 5px;
+  left: 5px;
+  border: none;
+  background-color: inherit;
 }
 
 .invisible {
