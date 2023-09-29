@@ -8,7 +8,20 @@ async function get_anything(url, callback, container){
     callback(data, container);
 
   } catch (error) {
-    const error_m = sw_error(error, 'Something went wrong, try again later');
+    const error_m = sw_error('Something went wrong at get information.', error);
+    error_m();
+  }
+}
+
+async function post_add_favorite_kitten(url){
+  try {
+    const res = await fetch(url, {
+      method: 'POST'
+    });
+    const data = await res.json();
+    sw_succes('Yo have added a cat to your favorite list succesfull!', data.message)
+  } catch(error){
+    const error_m = sw_error('Something went wrong at post method.', error);
     error_m();
   }
 }

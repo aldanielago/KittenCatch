@@ -1,7 +1,7 @@
 function sw_succes(message){
   const succes = () =>{
     swal({
-      title: "Good job!",
+      title: "Succes!",
       text: message,
       icon: "success",
     });

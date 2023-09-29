@@ -8,9 +8,11 @@
   width: 90%;
 }
 
-.img_cat {
+.relative {
   position: relative;
+}
 
+.img_cat {
   width: 300px;
   height: 300px;
   margin: 20px;
@@ -21,12 +23,16 @@
 }
 
 .btn_dislike {
-  position: relative;
-  top: 5px;
-  left: 5px;
+  position: absolute;
+  top: 25px;
+  left: 25px;
 
   border: none;
   background-color: inherit;
+}
+
+.btn_dislike:hover {
+  cursor: pointer;
 }
 
 .invisible {

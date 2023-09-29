@@ -19,9 +19,12 @@ function append_images(data, container){
   container.innerHTML = '';
   data.forEach(e => {
     const mini_container = document.createElement('div');
+    mini_container.classList.add('relative')
     const img = create_image_cat(e);
-    mini_container.innerHTML += img.outerHTML;
+    const btn = create_favorite_button();
 
+    mini_container.innerHTML += img.outerHTML;
+    mini_container.innerHTML += btn.outerHTML;
     container.innerHTML += mini_container.outerHTML;
   });
 };
@@ -34,7 +37,13 @@ function create_image_cat(e){
   return img;
 }
 
-function add_favorite_button(e){
+function create_favorite_button(){
   const btn = document.createElement('button');
-  
+  const img = document.createElement('img');
+  img.src = './assets/suit-heart.svg';
+  btn.classList.add('btn_dislike')
+
+  btn.appendChild(img);
+  btn.addEventListener('click', post_add_favorite_kitten)
+  return btn;
 }
