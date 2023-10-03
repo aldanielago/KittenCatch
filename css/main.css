@@ -643,7 +643,7 @@
   border: 0.5px solid black;
 }
 
-.btn_dislike {
+.btn_heart {
   position: absolute;
   top: 25px;
   left: 25px;
@@ -651,7 +651,7 @@
   background-color: inherit;
 }
 
-.btn_dislike:hover {
+.btn_heart:hover {
   cursor: pointer;
 }
 
