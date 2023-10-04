@@ -4,9 +4,10 @@ const $ = (id) => document.querySelector(id);
 const container_random_images = $('#container-random-images');
 const container_favorite_images = $('#container-favorite-images');
 const btn_change_cat = $('.btn-change-cat');
+const form = document.querySelector('.form-upload-kitten');
 
 btn_change_cat.addEventListener('click', () => {
-  get_anything(`${URL}?limit=3`, append_images, container_random_images);
+  get_anything(`${URL}/images/search?limit=10`, container_random_images);
 });
 
 /**
@@ -65,17 +66,12 @@ function create_favorite_button(e, type){
   const btn = document.createElement('button');
   const img = document.createElement('img');
   type == 'random' ? img.src = './assets/suit-heart.svg' : img.src = './assets/suit-heart-fill.svg'
-  btn.classList.add('btn_heart')
 
-  if(type == 'random'){
-    btn.addEventListener('click', () => {
-      post_add_favorite_kitten(e.id);
-    });
-  } else {
-    btn.addEventListener('click', () => {
-      delete_favorite_kitten(e.id);
-    });
-  }
+  btn.classList.add('btn_heart')
+  btn.addEventListener('click', () => {
+    type == 'random' ? post_add_favorite_kitten(e.id) : delete_favorite_kitten(e.id);
+  });
+
   btn.appendChild(img);
   return btn;
 }

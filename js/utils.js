@@ -24,7 +24,7 @@ function sw_error(title, message){
 
 function generate_notification(res, data, action){
   if(res.ok){
-    const succes_m = sw_succes('You have' + action + 'succesfull!');
+    const succes_m = sw_succes('You have ' + action + ' succesfull!');
     succes_m();
   } else {
     const error_m = sw_error(res.status, data.message);

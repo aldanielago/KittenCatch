@@ -1,25 +1,29 @@
 const URL = "https://api.thecatapi.com/v1";
 const secret = 'live_J9AQh9q3XIn68qL5EO2oXgDSqRL5iH4xzexuYBxSWYu1m0sPAIE4k8sy6UDdyb81';
 
+
 /**
- * The function `object_post` creates an object with properties and values for making a POST request
- * with specific headers and body content.
+ * The function `object_post` creates an object with properties for making a POST request with
+ * specified content and content type.
  * @param content - The `content` parameter is the data that you want to send in the POST request. It
- * should be a JSON object or a string that can be converted to JSON.
+ * can be a string, an object, or any other valid data type that you want to send to the server.
+ * @param content_type - The `content_type` parameter specifies the type of content being sent in the
+ * request body. It could be a string such as "application/json" for JSON data,
+ * "application/x-www-form-urlencoded" for form data, or any other valid content type.
  * @returns an object with the following properties: method, mode, credentials, headers, and body.
  */
-function object_post(content){
+function object_post(content, content_type){
   const obj = {
     method: 'POST',
     mode: 'cors',
 		credentials: 'same-origin',
     headers: {
-      'Content-Type': 'application/json',
       'x-api-key': secret
     },
-    body: JSON.stringify(
-      content
-    )
+    body: content
+  }
+  if(content_type){
+    obj.headers['Content-Type'] = content_type
   }
   return obj;
 }
@@ -39,38 +43,45 @@ function object_post(content){
  * you want to retrieve from the URL. By default, it is set to 'random'. However, you can pass a
  * different value to retrieve a specific type of data.
  */
-async function get_anything(url, callback, container, type = 'random'){
+async function get_anything(url, container, type = 'random'){
   const res = await fetch(url, {
     headers: {
       'x-api-key': secret
     }
   });
   const data = await res.json();
-  console.log(data);
 
   if(res.ok){
-    callback(data, container, type);
+    append_images(data, container, type);
   } else {
     const error_m = sw_error(res.status, data.message);
     error_m();
   }
 }
 
+
 /**
- * This JavaScript function adds a kitten to the user's favorite list by making an API request.
- * @param id - The `id` parameter represents the unique identifier of the kitten image that you want to
- * add to your favorite list.
+ * The function `post_add_favorite_kitten` sends a POST request to add a kitten to the user's favorite
+ * list, generates a notification, and updates the favorite images container.
+ * @param id - The `id` parameter is the unique identifier of the kitten image that you want to add to
+ * your favorite list.
  */
 async function post_add_favorite_kitten(id){
-  const res = await fetch(`${URL}/favourites`, object_post({
-    image_id: id
-  }));
+  const res = await fetch(`${URL}/favourites`, object_post(
+    JSON.stringify({ image_id: id }), 'application/json'
+  ));
   const data = await res.json();
 
-  generate_notification(res, data, ' added a cat to your favorite list ');
-  get_anything(`${URL}/favourites`, append_images, container_favorite_images, 'favorite');
+  generate_notification(res, data, 'added a cat to your favorite list');
+  get_anything(`${URL}/favourites`, container_favorite_images, 'favorite');
 }
 
+/**
+ * The function `delete_favorite_kitten` deletes a favorite kitten from a list and generates a
+ * notification.
+ * @param id - The `id` parameter is the unique identifier of the favorite kitten that you want to
+ * delete from the list.
+ */
 async function delete_favorite_kitten(id){
   const res = await fetch(`${URL}/favourites/${id}`, {
     method: 'DELETE',
@@ -82,12 +93,19 @@ async function delete_favorite_kitten(id){
   });
   const data = await res.json();
 
-  generate_notification(res, data, ' deleted a cat from your favorite list ');
-  get_anything(`${URL}/favourites`, append_images, container_favorite_images, 'favorite');
+  generate_notification(res, data, 'deleted a cat from your favorite list');
+  get_anything(`${URL}/favourites`, container_favorite_images, 'favorite');
 }
 
-// Resquest to the API to get images
-get_anything(`${URL}/images/search?limit=10`, append_images, container_random_images);
+async function upload_kitten_photo(){
+  const form_data = new FormData(form);
+  console.log(form_data.get('kitten_photo'));
+  const res = await fetch(`${URL}/images/upload`, object_post(form_data));
+  const data = await res.json();
 
-// Request to the API for favorite kittens
-get_anything(`${URL}/favourites`, append_images, container_favorite_images, 'favorite');
+  generate_notification(res, data, 'uploaded a photo of you kitten');
+  get_anything(`${URL}/favourites`, container_favorite_images, 'favorite');
+}
+
+get_anything(`${URL}/images/search?limit=10`, container_random_images);
+get_anything(`${URL}/favourites`, container_favorite_images, 'favorite');
