@@ -22,6 +22,7 @@ function object_post(content, content_type){
     },
     body: content
   }
+
   if(content_type){
     obj.headers['Content-Type'] = content_type
   }
@@ -97,12 +98,16 @@ async function delete_favorite_kitten(id){
   get_anything(`${URL}/favourites`, container_favorite_images, 'favorite');
 }
 
+/**
+ * The function uploads a kitten photo, adds it to favorites, generates a notification, and retrieves
+ * favorite images.
+ */
 async function upload_kitten_photo(){
   const form_data = new FormData(form);
-  console.log(form_data.get('kitten_photo'));
   const res = await fetch(`${URL}/images/upload`, object_post(form_data));
   const data = await res.json();
 
+  post_add_favorite_kitten(data.id)
   generate_notification(res, data, 'uploaded a photo of you kitten');
   get_anything(`${URL}/favourites`, container_favorite_images, 'favorite');
 }

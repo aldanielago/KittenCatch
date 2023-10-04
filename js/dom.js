@@ -1,3 +1,9 @@
+/**
+ * The function $ is a shorthand for document.querySelector and returns the first element that matches
+ * the specified CSS selector.
+ * @param id - The `id` parameter is a string that represents the CSS selector for the element you want
+ * to select. It can be any valid CSS selector, such as an element name, class name, or ID.
+ */
 const $ = (id) => document.querySelector(id);
 
 // Api requests section
@@ -6,6 +12,11 @@ const container_favorite_images = $('#container-favorite-images');
 const btn_change_cat = $('.btn-change-cat');
 const form = document.querySelector('.form-upload-kitten');
 
+/* The code is adding an event listener to the `btn_change_cat` button element. When the button is
+clicked, it will execute the callback function. Inside the callback function, the `get_anything`
+function is called with the URL `/images/search?limit=10` and the `container_random_images`
+element as arguments. This function is likely responsible for making an API request to retrieve
+random images and appending them to the `container_random_images` element. */
 btn_change_cat.addEventListener('click', () => {
   get_anything(`${URL}/images/search?limit=10`, container_random_images);
 });
