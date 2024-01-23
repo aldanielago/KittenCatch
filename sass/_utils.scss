@@ -38,3 +38,8 @@
 .invisible {
   display: none;
 }
+
+.centered_section {
+  display: grid;
+  place-items: center;
+}

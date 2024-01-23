@@ -12,25 +12,10 @@ const container_favorite_images = $('#container-favorite-images');
 const btn_change_cat = $('.btn-change-cat');
 const form = document.querySelector('.form-upload-kitten');
 
-/* The code is adding an event listener to the `btn_change_cat` button element. When the button is
-clicked, it will execute the callback function. Inside the callback function, the `get_anything`
-function is called with the URL `/images/search?limit=10` and the `container_random_images`
-element as arguments. This function is likely responsible for making an API request to retrieve
-random images and appending them to the `container_random_images` element. */
 btn_change_cat.addEventListener('click', () => {
   get_anything(`${URL}/images/search?limit=10`, container_random_images);
 });
 
-/**
- * The function appends images to a container element based on the provided data and type.
- * @param data - The `data` parameter is an array of objects that contains information about the images
- * to be appended. Each object in the array represents an image and its associated data.
- * @param container - The "container" parameter is the HTML element where the images will be appended
- * to. It should be a valid DOM element, such as a div or a section.
- * @param type - The "type" parameter is a string that specifies the type of images to be appended. It
- * could be used to determine the source or category of the images, such as "cats", "dogs", or
- * "landscapes".
- */
 function append_images(data, container, type){
   container.innerHTML = '';
   data.forEach(e => {
@@ -45,34 +30,14 @@ function append_images(data, container, type){
   });
 };
 
-/**
- * The function creates an image element with a cat image and assigns it a class and alt attribute
- * based on the provided data.
- * @param e - The parameter "e" is an object that represents a cat. It contains properties such as
- * "url" and "image.url" which are used to set the source of the image element. The "id" property is
- * used to set the alt attribute of the image.
- * @param type - The "type" parameter is used to determine the type of image to create. It can have two
- * possible values: "random" or any other value.
- * @returns an HTML `img` element.
- */
 function create_image_cat(e, type){
   const img = document.createElement('img');
   type == 'random' ? img.src = e.url : img.src = e.image.url;
   img.alt = e.id;
   img.classList.add('img_cat');
   return img;
-}
+};
 
-/**
- * The function creates a favorite button with a heart icon and adds event listeners based on the type
- * parameter.
- * @param e - The parameter "e" is an object representing the kitten element that the favorite button
- * is being created for. It likely contains information about the kitten, such as its ID or other
- * properties.
- * @param type - The "type" parameter is a string that determines the type of favorite button to
- * create. It can have two possible values: "random" or any other value.
- * @returns a button element with an image element inside it.
- */
 function create_favorite_button(e, type){
   const btn = document.createElement('button');
   const img = document.createElement('img');
@@ -85,4 +50,4 @@ function create_favorite_button(e, type){
 
   btn.appendChild(img);
   return btn;
-}
+};

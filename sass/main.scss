@@ -17,6 +17,9 @@ $borde: rgb(204, 201, 201);
   position: relative;
   background: $phone;
   overflow: hidden;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
 
   width: 300px;
   height: 550px;
@@ -99,9 +102,36 @@ $borde: rgb(204, 201, 201);
   }
 }
 
-// Patita
+@keyframes subir_izquieda_abajo {
+  0% {
+    transform: translateY(0px) rotate(15deg);
+  }
+  10% {
+    transform: translateY(30px);
+  }
+  90% {
+    transform: translateY(0px) rotate(15deg);
+  }
+}
+
+@keyframes subir_derecha_abajo {
+  0% {
+    transform: rotate(-48deg);
+  }
+  10% {
+    transform: translateX(-60px) rotate(-50deg);
+  }
+  20% {
+    transform: rotate(-70deg);
+  }
+  90% {
+    transform: translateX(90px) rotate(-48deg);
+  }
+}
+
+// Patita arriba derecha
 .layer:nth-child(1){
-  @include posicion(1, 90px, 90px, 95px, auto, auto, 15px, inner);
+  @include posicion(1, 90px, 90px, 100px, auto, auto, 15px, inner);
 
   .dedito1 {
     @include dedito(25px, 25px, $paw2, rgb(136, 135, 135), 18px, 12px);
@@ -140,9 +170,10 @@ $borde: rgb(204, 201, 201);
   }
 
   animation: subir 3s infinite;
+  animation-delay: 1s;
 }
 
-// Patita
+// Patita arriba izquierda
 .layer:nth-child(2){
   @include posicion(2, 90px, 90px, 145px, auto, 16px, auto, inner);
 
@@ -183,11 +214,12 @@ $borde: rgb(204, 201, 201);
   }
 
   animation: subir 2s infinite;
+  animation-delay: 3s;
 }
 
-// Patita
+// Patita mitad derecha
 .layer:nth-child(3){
-  @include posicion(3, 90px, 90px, 80px, auto, auto, 40px, inner);
+  @include posicion(3, 90px, 85px, 80px, auto, auto, 40px, inner);
   transform: rotate(-90deg);
 
   .dedito1 {
@@ -227,8 +259,8 @@ $borde: rgb(204, 201, 201);
   }
 
   transform-origin: bottom right;
-  animation: subir_izquierdo 3s infinite;
-  animation-delay: 1s;
+  animation: subir_izquierdo 2s infinite;
+  animation-delay: 2s;
 }
 
 // Pared
@@ -245,7 +277,7 @@ $borde: rgb(204, 201, 201);
   border-radius: 20px;
 }
 
-// Patita
+// Patita izquierda borde
 .layer:nth-child(6){
   @include posicion(6, 90px, 120px, 160px, auto, -120px, auto, inner);
   transform: rotate(50deg);
@@ -290,14 +322,15 @@ $borde: rgb(204, 201, 201);
   }
 
   transform-origin: bottom left;
-  animation: subir_derecho 1s infinite;
-  animation-delay: 4s;
+  animation: subir_derecho 2s infinite;
+  animation-delay: 3s;
 }
 
 // Patita
 .layer:nth-child(7){
   @include posicion(7, 90px, 90px, 245px, auto, auto, 15px, inner);
-  animation: subir 4s infinite;
+  animation: subir 2s infinite;
+  animation-delay: 4s;
 
   .dedito1 {
     @include dedito(25px, 25px, $paw2, $paw3, 20px, 10px);
@@ -354,7 +387,7 @@ $borde: rgb(204, 201, 201);
 
 // Patita
 .layer:nth-child(10){
-  @include posicion(10, 90px, 120px, auto, 0, 50px, auto, inner);
+  @include posicion(10, 800px, 120px, auto, -115px, 50px, auto, inner);
   transform: rotate(15deg);
 
   .dedito1 {
@@ -395,11 +428,14 @@ $borde: rgb(204, 201, 201);
     top: 30px;
     left: 22px;
   }
+
+  animation: subir_izquieda_abajo 1s infinite;
+  animation-delay: 1s;
 }
 
-//Patita
+// Patita
 .layer:nth-child(11){
-  @include posicion(8, 90px, 130px, auto, 52px, auto, 0, inner);
+  @include posicion(8, 90px, 130px, auto, 60px, auto, -107px, inner);
   transform: rotate(-48deg);
 
   .dedito1 {
@@ -440,6 +476,9 @@ $borde: rgb(204, 201, 201);
     top: 30px;
     left: 22px;
   }
+
+  animation: subir_derecha_abajo 2s infinite;
+  animation-delay: 3s;
 }
 
 @import "utils.scss";

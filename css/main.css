@@ -7,6 +7,9 @@
   position: relative;
   background: #d3cccc;
   overflow: hidden;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 300px;
   height: 550px;
   border: 7px solid #a57777;
@@ -60,16 +63,42 @@
     transform: rotate(80deg);
   }
 }
+@keyframes subir_izquieda_abajo {
+  0% {
+    transform: translateY(0px) rotate(15deg);
+  }
+  10% {
+    transform: translateY(30px);
+  }
+  90% {
+    transform: translateY(0px) rotate(15deg);
+  }
+}
+@keyframes subir_derecha_abajo {
+  0% {
+    transform: rotate(-48deg);
+  }
+  10% {
+    transform: translateX(-60px) rotate(-50deg);
+  }
+  20% {
+    transform: rotate(-70deg);
+  }
+  90% {
+    transform: translateX(90px) rotate(-48deg);
+  }
+}
 .layer:nth-child(1) {
   z-index: 1;
   width: 90px;
   height: 90px;
-  top: 95px;
+  top: 100px;
   bottom: auto;
   left: auto;
   right: 15px;
   background: inner;
   animation: subir 3s infinite;
+  animation-delay: 1s;
 }
 .layer:nth-child(1) .dedito1 {
   position: absolute;
@@ -140,6 +169,7 @@
   right: auto;
   background: inner;
   animation: subir 2s infinite;
+  animation-delay: 3s;
 }
 .layer:nth-child(2) .dedito1 {
   position: absolute;
@@ -203,7 +233,7 @@
 .layer:nth-child(3) {
   z-index: 3;
   width: 90px;
-  height: 90px;
+  height: 85px;
   top: 80px;
   bottom: auto;
   left: auto;
@@ -211,8 +241,8 @@
   background: inner;
   transform: rotate(-90deg);
   transform-origin: bottom right;
-  animation: subir_izquierdo 3s infinite;
-  animation-delay: 1s;
+  animation: subir_izquierdo 2s infinite;
+  animation-delay: 2s;
 }
 .layer:nth-child(3) .dedito1 {
   position: absolute;
@@ -310,8 +340,8 @@
   background: inner;
   transform: rotate(50deg);
   transform-origin: bottom left;
-  animation: subir_derecho 1s infinite;
-  animation-delay: 4s;
+  animation: subir_derecho 2s infinite;
+  animation-delay: 3s;
 }
 .layer:nth-child(6) .dedito1 {
   position: absolute;
@@ -384,7 +414,8 @@
   left: auto;
   right: 15px;
   background: inner;
-  animation: subir 4s infinite;
+  animation: subir 2s infinite;
+  animation-delay: 4s;
 }
 .layer:nth-child(7) .dedito1 {
   position: absolute;
@@ -475,14 +506,16 @@
 
 .layer:nth-child(10) {
   z-index: 10;
-  width: 90px;
+  width: 800px;
   height: 120px;
   top: auto;
-  bottom: 0;
+  bottom: -115px;
   left: 50px;
   right: auto;
   background: inner;
   transform: rotate(15deg);
+  animation: subir_izquieda_abajo 1s infinite;
+  animation-delay: 1s;
 }
 .layer:nth-child(10) .dedito1 {
   position: absolute;
@@ -551,11 +584,13 @@
   width: 90px;
   height: 130px;
   top: auto;
-  bottom: 52px;
+  bottom: 60px;
   left: auto;
-  right: 0;
+  right: -107px;
   background: inner;
   transform: rotate(-48deg);
+  animation: subir_derecha_abajo 2s infinite;
+  animation-delay: 3s;
 }
 .layer:nth-child(11) .dedito1 {
   position: absolute;
@@ -657,4 +692,9 @@
 
 .invisible {
   display: none;
+}
+
+.centered_section {
+  display: grid;
+  place-items: center;
 }/*# sourceMappingURL=main.css.map */
