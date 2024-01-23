@@ -39,7 +39,21 @@
   display: none;
 }
 
-.centered_section {
-  display: grid;
-  place-items: center;
+.container-text {
+  position: absolute;
+  z-index: 100;
+  right: 50%;
+  top: 8px;
+  transform: translateX(50%);
+
+  padding: 4px 12px;
+  background-color: $very-light-orange;
+  border-radius: 12px;
+  border: 1px solid $brown;
+}
+
+.text-score {
+  color: $brown;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
