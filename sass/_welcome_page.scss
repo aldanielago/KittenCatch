@@ -117,25 +117,6 @@
   @include paw_position(-8px, auto, 5%, rotate(-15deg));
 }
 
-.container-text {
-  position: absolute;
-  z-index: 100;
-  right: 50%;
-  top: 8px;
-  transform: translateX(50%);
-
-  padding: 4px 12px;
-  background-color: $very-light-orange;
-  border-radius: 12px;
-  border: 1px solid $brown;
-}
-
-.text-score {
-  color: $brown;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-}
-
 .general-bg {
   z-index: -10;
   height: 100%;

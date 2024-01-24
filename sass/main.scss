@@ -169,6 +169,15 @@ $gray: rgb(204, 201, 201);
   }
 }
 
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @import "welcome_page.scss";
 @import "game.scss";
 @import "requests_section.scss";

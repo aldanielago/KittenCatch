@@ -107,6 +107,14 @@
     transform: translate(-130px, 0px);
   }
 }
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .welcome-page {
   transition: transform 0.5s ease-in-out;
   position: relative;
@@ -256,24 +264,6 @@
   z-index: 100;
 }
 
-.container-text {
-  position: absolute;
-  z-index: 100;
-  right: 50%;
-  top: 8px;
-  transform: translateX(50%);
-  padding: 4px 12px;
-  background-color: #F1D3B3;
-  border-radius: 12px;
-  border: 1px solid #ba685a;
-}
-
-.text-score {
-  color: #ba685a;
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
-}
-
 .general-bg {
   z-index: -10;
   height: 100%;
@@ -296,6 +286,88 @@
   border: 7px solid #ba685a;
   box-shadow: 0px 0px 15px 3px #8a7586;
   border-radius: 30px;
+}
+
+.bg-blur {
+  position: absolute;
+  background-color: black;
+  width: inherit;
+  height: inherit;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 8px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reverse-counter {
+  font-size: 12rem;
+  color: #ba685a;
+  font-family: "Kalam", cursive;
+  text-align: center;
+}
+
+.end-game-text {
+  font-size: 4rem;
+  color: #ba685a;
+  font-family: "Kalam", cursive;
+  text-align: center;
+  padding: 12px;
+  border-radius: 20px;
+}
+
+.border-button-blur {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  top: 25%;
+  transform: translateX(-50%) rotate(0deg);
+  z-index: 20;
+  border: 12px dotted white;
+  border-radius: 50%;
+  animation: girar 4s infinite linear;
+}
+
+.container-text {
+  position: absolute;
+  z-index: 100;
+  right: 50%;
+  top: 8px;
+  transform: translateX(50%);
+  padding: 4px 12px;
+  background-color: #F1D3B3;
+  border-radius: 12px;
+  border: 1px solid #ba685a;
+}
+
+.text-score, .counter-during-game {
+  color: #ba685a;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+.counter-game-container {
+  position: absolute;
+  background-color: #F1D3B3;
+  border: 1px solid #ba685a;
+  padding: 4px;
+  border-radius: 50%;
+  top: 8px;
+  left: 5px;
+  width: 35px;
+  height: 35px;
+}
+
+.counter-during-game {
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .layer {
@@ -501,4 +573,8 @@
 
 .none {
   display: none;
+}
+
+.disappear {
+  animation: disappear 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }/*# sourceMappingURL=main.css.map */
