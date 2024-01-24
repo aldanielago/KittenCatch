@@ -7,52 +7,62 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
 	<title>Catch the paw</title>
 </head>
-<body>
-	<section class="phone">
-		<!--Patita-->
+<body class="general-bg">
+	<section class="welcome-page">
+		<div class="bg">
+			<h1>Catch the paw</h1>
+			<p>Click the most paws possible in one minute.</p>
+			<button type="button" class="btn-start" onclick="startGame()">
+				<img src="./assets/play-circle.svg">
+			</button>
+			<div class="border-button"></div>
+			<img class="paw1" src="./assets/pata1.png" alt="">
+			<img class="paw2" src="./assets/pata2.png" alt="">
+			<img class="paw3" src="./assets/pata3.png" alt="">
+			<img class="paw4" src="./assets/pata5.png" alt="">
+			<img class="paw5" src="./assets/pata6.png" alt="">
+			<img class="paw6" src="./assets/pata7.png" alt="">
+		</div>
+		<div class="blob"></div>
+	</section>
+
+	<section class="phone none">
 		<div class="layer paw">
 			<img src="./assets/pata1.png">
 		</div>
-		<!--Patita-->
 		<div class="layer paw">
-			<img src="./assets/pata2.png" alt="">
+			<img src="./assets/pata2.png">
 		</div>
-		<!--Patita-->
 		<div class="layer paw">
-			<img src="./assets/pata3.png" alt="">
+			<img src="./assets/pata3.png">
 		</div>
-		<!--Pared-->
 		<div class="layer wall-1"></div>
-		<!--Pared-->
 		<div class="layer"></div>
-		<!--Patita-->
 		<div class="layer paw">
-			<img src="./assets/pata4.png" alt="">
+			<img src="./assets/pata2.png">
 		</div>
-		<!--Patita-->
 		<div class="layer paw">
-			<img src="./assets/pata5.png" alt="">
+			<img src="./assets/pata5.png">
 		</div>
-		<!--Pared-->
 		<div class="layer"></div>
-		<!--Pared-->
 		<div class="layer"></div>
-		<!--Patita-->
 		<div class="layer paw">
-			<img src="./assets/pata3.png" alt="">
+			<img src="./assets/pata3.png">
 		</div>
-		<!--Patita-->
 		<div class="layer paw">
-			<img src="./assets/pata1.png" alt="">
+			<img src="./assets/pata1.png">
 		</div>
 		<div class="container-text">
 			<p class="text-score">Score: <span id="score">0</span></p>
 		</div>
 	</section>
 
-	<section class="general-container invisible">
+	<section class="general-container none">
 		<form class="form-upload-kitten">
 			<label for="file">Attach a photo of your kitten. </label>
 			<input type="file" name="file" id="file">
@@ -68,9 +78,9 @@
 	</section>
 
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<script src="./js/utils.js"></script>
 	<script src="./js/dom.js"></script>
-	<script src="./js/api.js"></script>
 	<script src="./js/game.js"></script>
+	<script src="./js/utils.js"></script>
+	<script src="./js/api.js"></script>
 </body>
 </html>

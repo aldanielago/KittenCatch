@@ -1,0 +1,22 @@
+.img_cat {
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+
+  object-fit: cover;
+  border-radius: 5px;
+  border: 0.5px solid black;
+}
+
+.btn_heart {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+
+  border: none;
+  background-color: inherit;
+}
+
+.btn_heart:hover {
+  cursor: pointer;
+}

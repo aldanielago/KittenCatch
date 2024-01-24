@@ -1,12 +1,5 @@
-/**
- * The function $ is a shorthand for document.querySelector and returns the first element that matches
- * the specified CSS selector.
- * @param id - The `id` parameter is a string that represents the CSS selector for the element you want
- * to select. It can be any valid CSS selector, such as an element name, class name, or ID.
- */
 const $ = (id) => document.querySelector(id);
 
-// Api requests section
 const container_random_images = $('#container-random-images');
 const container_favorite_images = $('#container-favorite-images');
 const btn_change_cat = $('.btn-change-cat');
