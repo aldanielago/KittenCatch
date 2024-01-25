@@ -69,5 +69,5 @@ async function upload_kitten_photo(){
   get_anything(`${URL}/favourites`, container_favorite_images, 'favorite');
 };
 
-get_anything(`${URL}/images/search?limit=10`, container_random_images);
+get_anything(`${URL}/images/search?limit=5`, container_random_images);
 get_anything(`${URL}/favourites`, container_favorite_images, 'favorite');

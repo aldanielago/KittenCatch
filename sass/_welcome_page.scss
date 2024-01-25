@@ -16,12 +16,20 @@
   justify-content: center;
 }
 
+.end-game-section {
+  @extend .welcome-page;
+  height: 78vh;
+  top: 10%;
+  transform: translate(-50%, 0%);
+}
+
 .welcome-page h1 {
   color: white;
   font-family: 'Kalam', cursive;
   text-align: center;
   font-size: 3rem;
   padding-top: 18px;
+  margin: 0px;
 }
 
 .welcome-page p {
@@ -31,6 +39,15 @@
   font-size: 1.5rem;
   padding-top: 18px;
   letter-spacing: 2px;
+  margin: 0px;
+}
+
+.p-gift {
+  text-decoration: underline;
+}
+
+.p-gift:hover {
+  cursor: pointer;
 }
 
 .bg {

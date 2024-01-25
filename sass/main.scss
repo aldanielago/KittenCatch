@@ -191,6 +191,17 @@ $gray: rgb(204, 201, 201);
   }
 }
 
+@keyframes slide-bottom-end {
+  0% {
+    -webkit-transform: translate(-450px, -500px);
+            transform: translate(-450px, -500px);
+  }
+  100% {
+    -webkit-transform: translate(-450px, 20%);
+            transform: translate(-450px, 20%);
+  }
+}
+
 @keyframes disappear {
   0% {
     opacity: 1;

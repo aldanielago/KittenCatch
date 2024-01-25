@@ -1,5 +1,37 @@
 const $ = (id) => document.querySelector(id);
 
+// Game
+const score = document.querySelector('#score');
+const paws = document.querySelectorAll('.paw');
+
+// Welcome page
+const btnStart = $('.btn-start');
+const welcomePage = $('.welcome-page');
+const phoneSection = $('.phone');
+
+// 3 seconds before game
+const countainer_before_game = $('.container-counter-before-game');
+const reverseCounter = $('.reverse-counter');
+const borderReverseCounter = $('.border-button-blur');
+
+// During the game
+const gameContainer = $('.counter-during-game');
+
+// End game
+const container_end_game = $('.container-after-game');
+const endGameSection = $('.end-game-section');
+const scoreEndGame = $('#score-end-game');
+const best_score = $('#best-score');
+
+// Music
+const music_before_game = $('#music-before-game');
+const music_during_game = $('#music-during-game');
+const music_after_game = $('#music-after-game');
+const music_countdown = $('#music-countdown');
+const meow = $('#meow');
+
+// API
+const requestsSection = $('.api-section')
 const container_random_images = $('#container-random-images');
 const container_favorite_images = $('#container-favorite-images');
 const btn_change_cat = $('.btn-change-cat');

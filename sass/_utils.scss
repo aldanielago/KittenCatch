@@ -1,7 +1,3 @@
-.general-container {
-  width: 100%;
-}
-
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -25,6 +21,11 @@
 .go-down {
   -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.go-down-end-game {
+  -webkit-animation: slide-bottom-end 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-bottom-end 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .none {
