@@ -150,11 +150,33 @@ $gray: rgb(204, 201, 201);
 @keyframes slide-top {
   0% {
     -webkit-transform: translate(-500px, 0px);
-            transform: translate(-500px, 0px);
+    transform: translate(-500px, 0px);
   }
   100% {
     -webkit-transform: translate(-500px, -500px);
-            transform: translate(-500px, -500px);
+    transform: translate(-500px, -500px);
+  }
+}
+
+@-webkit-keyframes slide-top-phone {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  100% {
+    -webkit-transform: translate(0px, -500px);
+            transform: translate(0px, -500px);
+  }
+}
+
+@keyframes slide-top-phone {
+  0% {
+    -webkit-transform: translate(-130px, 0px);
+            transform: translate(-130px, 0px);
+  }
+  100% {
+    -webkit-transform: translate(-130px, -700px);
+            transform: translate(-130px, -700px);
   }
 }
 
