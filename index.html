@@ -17,19 +17,22 @@
 		<div class="bg">
 			<h1>Catch the paw</h1>
 			<p>Click the most paws possible in 10 secs!</p>
-			<button type="button" class="btn-start" onclick="startGame()">
+			<button type="button" class="btn-start" onclick="start_game()">
 				<img src="./assets/play-circle.svg">
 			</button>
 			<div class="border-button"></div>
-			<img class="paw1" src="./assets/pata1.png" alt="">
-			<img class="paw2" src="./assets/pata2.png" alt="">
-			<img class="paw3" src="./assets/pata3.png" alt="">
-			<img class="paw4" src="./assets/pata5.png" alt="">
-			<img class="paw5" src="./assets/pata6.png" alt="">
-			<img class="paw6" src="./assets/pata7.png" alt="">
+			<img class="paw paw1" src="./assets/pata1.png" alt="cute paw">
+			<img class="paw paw2" src="./assets/pata2.png" alt="cute paw">
+			<img class="paw paw3" src="./assets/pata3.png" alt="cute paw">
+			<img class="paw paw4" src="./assets/pata5.png" alt="cute paw">
+			<img class="paw paw5" src="./assets/pata6.png" alt="cute paw">
+			<img class="paw paw6" src="./assets/pata7.png" alt="cute paw">
 		</div>
 		<div class="blob"></div>
 	</section>
+	<button class="container-music" type="button" onclick="toggleMusic()">
+		<img id="i-play-music" src="./assets/volume-down.svg">
+	</button>
 
 	<section class="phone none">
 		<div class="layer paw">
@@ -41,7 +44,7 @@
 		<div class="layer paw">
 			<img src="./assets/pata3.png">
 		</div>
-		<div class="layer wall-1"></div>
+		<div class="layer"></div>
 		<div class="layer"></div>
 		<div class="layer paw">
 			<img src="./assets/pata2.png">
@@ -79,17 +82,20 @@
 			<p>Best score is: <span id="best-score">0</span></p>
 			<p class="p-gift">We have a gift for you!</p>
 			<p>Play again!</p>
-			<button type="button" class="btn-start" onclick="startGame()">
+			<button type="button" class="btn-start" onclick="start_game()">
 				<img src="./assets/play-circle.svg">
 			</button>
 			<div class="border-button"></div>
-			<img class="paw1" src="./assets/pata1.png" alt="">
-			<img class="paw2" src="./assets/pata2.png" alt="">
-			<img class="paw3" src="./assets/pata3.png" alt="">
-			<img class="paw4" src="./assets/pata5.png" alt="">
-			<img class="paw5" src="./assets/pata6.png" alt="">
-			<img class="paw6" src="./assets/pata7.png" alt="">
+			<img class="paw1" src="./assets/pata1.png" alt="cute paw">
+			<img class="paw2" src="./assets/pata2.png" alt="cute paw">
+			<img class="paw3" src="./assets/pata3.png" alt="cute paw">
+			<img class="paw4" src="./assets/pata5.png" alt="cute paw">
+			<img class="paw5" src="./assets/pata6.png" alt="cute paw">
+			<img class="paw6" src="./assets/pata7.png" alt="cute paw">
 		</div>
+		<button class="container-music" type="button" onclick="toggleMusic()">
+			<img id="i-play-music" src="./assets/volume-down.svg">
+		</button>
 		<div class="blob"></div>
 	</section>
 
@@ -112,7 +118,7 @@
 	<audio id="music-during-game" src="./assets/music-during.mp3"></audio>
 	<audio id="music-after-game" src="./assets/music-end.mp3"></audio>
 	<audio id="music-countdown" src="./assets/music-countdown.mp3"></audio>
-	<audio id="meow" src="./assets/meow1.mp3"></audio>
+	<audio id="meow" src="./assets/meow3.mp3"></audio>
 
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="./js/dom.js"></script>

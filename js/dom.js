@@ -5,22 +5,22 @@ const score = document.querySelector('#score');
 const paws = document.querySelectorAll('.paw');
 
 // Welcome page
-const btnStart = $('.btn-start');
-const welcomePage = $('.welcome-page');
-const phoneSection = $('.phone');
+const first_section = $('.welcome-page');
+const i_play_music = $('#i-play-music');
 
 // 3 seconds before game
-const countainer_before_game = $('.container-counter-before-game');
-const reverseCounter = $('.reverse-counter');
-const borderReverseCounter = $('.border-button-blur');
+const container_before_game = $('.container-counter-before-game');
+const reverse_counter = $('.reverse-counter');
+const border_reverse_counter = $('.border-button-blur');
 
 // During the game
-const gameContainer = $('.counter-during-game');
+const game_counter = $('.counter-during-game');
+const game_section = $('.phone');
 
 // End game
 const container_end_game = $('.container-after-game');
-const endGameSection = $('.end-game-section');
-const scoreEndGame = $('#score-end-game');
+const section_end_game = $('.end-game-section');
+const game_score = $('#score-end-game');
 const best_score = $('#best-score');
 
 // Music
@@ -31,11 +31,11 @@ const music_countdown = $('#music-countdown');
 const meow = $('#meow');
 
 // API
-const requestsSection = $('.api-section')
+const api_section = $('.api-section')
 const container_random_images = $('#container-random-images');
 const container_favorite_images = $('#container-favorite-images');
 const btn_change_cat = $('.btn-change-cat');
-const form = document.querySelector('.form-upload-kitten');
+const form = $('.form-upload-kitten');
 
 btn_change_cat.addEventListener('click', () => {
   get_anything(`${URL}/images/search?limit=10`, container_random_images);

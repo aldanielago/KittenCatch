@@ -34,14 +34,14 @@
 .reverse-counter {
   font-size: 12rem;
   color: $brown;
-  font-family: 'Kalam', cursive;
+  font-family: $font-kalam;
   text-align: center;
 }
 
 .end-game-text{
   font-size: 4rem;
   color: $brown;
-  font-family: 'Kalam', cursive;
+  font-family: $font-kalam;
   text-align: center;
   padding: 12px;
   border-radius: 20px;
@@ -72,10 +72,22 @@
   border: 1px solid $brown;
 }
 
+.container-music {
+  @extend .container-text;
+  right: 10%;
+  top: 10px;
+  transform: translate(0, 0);
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
 .text-score {
   color: $brown;
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $font-open-sans;
 }
 
 .counter-game-container {

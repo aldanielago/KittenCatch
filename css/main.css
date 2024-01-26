@@ -364,7 +364,7 @@
   animation: girar 4s infinite linear;
 }
 
-.container-text {
+.container-text, .container-music {
   position: absolute;
   z-index: 100;
   right: 50%;
@@ -374,6 +374,16 @@
   background-color: #F1D3B3;
   border-radius: 12px;
   border: 1px solid #ba685a;
+}
+
+.container-music {
+  right: 10%;
+  top: 10px;
+  transform: translate(0, 0);
+}
+.container-music img {
+  width: 20px;
+  height: 20px;
 }
 
 .text-score, .counter-during-game {

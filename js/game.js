@@ -1,5 +1,8 @@
-music_before_game.play();
 let count = 0;
+
+document.addEventListener('DOMContentLoaded', () => {
+  music_before_game.play();
+});
 
 paws.forEach(paw => {
   paw.addEventListener('click', () => {
@@ -9,72 +12,75 @@ paws.forEach(paw => {
   });
 });
 
-function startGame() {
-  welcomePage.classList.add('go-up');
+function start_game() {
+  count = 0;
+  first_section.classList.add('go-up');
   setTimeout(() => {
-    welcomePage.classList.add('none');
-    phoneSection.classList.remove('none');
-    phoneSection.classList.add('go-down');
-    counterBeforeGame();
-    countainer_before_game.classList.remove('none');
+    first_section.classList.add('none');
+    game_section.classList.remove('none');
+    game_section.classList.add('go-down');
+    counter_before_game()
+    container_before_game.classList.remove('none');
+    game_section.classList.remove('go-up-phone');
   }, 1000);
 }
 
-function counterBeforeGame() {
+function counter_before_game() {
   music_before_game.pause();
   music_countdown.currentTime = 0;
   music_countdown.play();
-  reverseCounter.textContent = 3;
+  reverse_counter.textContent = 3;
   setTimeout(() => {
-    reverseCounter.textContent = 2;
+    reverse_counter.textContent = 2;
   }, 1000);
   setTimeout(() => {
-    reverseCounter.textContent = 1;
+    reverse_counter.textContent = 1;
   }, 2000);
   setTimeout(() => {
-    borderReverseCounter.classList.add('none');
-    reverseCounter.textContent = 'GO';
+    border_reverse_counter.classList.add('none');
+    reverse_counter.textContent = 'GO';
   }, 3000);
   setTimeout(() => {
-    countainer_before_game.classList.add('disappear');
-    countainer_before_game.classList.add('none');
-    counterDuringGame();
+    container_before_game.classList.add('disappear');
+    container_before_game.classList.add('none');
+    counter_during_game()
     music_countdown.pause();
-    countainer_before_game.classList.remove('disappear');
+    container_before_game.classList.remove('disappear');
+    border_reverse_counter.classList.remove('none');
   }, 4000);
 }
 
-function counterDuringGame() {
+function counter_during_game() {
   music_during_game.currentTime = 0;
   music_during_game.play();
   let time = 9;
   const timer = setInterval(() => {
     if (time === 0) {
       clearInterval(timer);
-      endGame();
+      end_game();
     } else {
       time--;
-      gameContainer.textContent = time;
+      game_counter.textContent = time;
     }
   }, 1000);
 }
 
-function endGame() {
+function end_game() {
   container_end_game.classList.remove('none');
   music_during_game.pause();
   music_after_game.currentTime = 0;
   music_after_game.play();
   setTimeout(() => {
     container_end_game.classList.add('none');
-    phoneSection.classList.remove('go-down');
-    phoneSection.classList.add('go-up-phone');
+    game_section.classList.remove('go-down');
+    game_section.classList.add('go-up-phone');
   }, 2000);
   setTimeout(() => {
-    phoneSection.classList.add('none');
-    endGameSection.classList.remove('none');
-    endGameSection.classList.add('go-down-end-game');
-    scoreEndGame.textContent = count;
-    saveScore(count);
+    game_section.classList.add('none');
+    section_end_game.classList.remove('none');
+    section_end_game.classList.add('go-down-end-game');
+    game_score.textContent = count;
+    save_score(count);
     best_score.textContent = localStorage.getItem('score');
   }, 3000);
   setTimeout(() => {
@@ -84,9 +90,8 @@ function endGame() {
   }, 5000);
 }
 
-function saveScore(score) {
+function save_score(score) {
   if(!localStorage.getItem('score') || localStorage.getItem('score') < score) {
     localStorage.setItem('score', score);
   }
-  count = 0;
 }

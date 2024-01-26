@@ -8,6 +8,9 @@ $brown: #ba685a;
 $very-light-brown: #C8B6A6;
 $light-purple: #8a7586;
 $gray: rgb(204, 201, 201);
+$font-kalam: 'Kalam', cursive;
+$font-open-sans: 'Open Sans', sans-serif;
+
 
 * {
   box-sizing: border-box;
@@ -211,7 +214,7 @@ $gray: rgb(204, 201, 201);
   }
 }
 
-@import "welcome_page.scss";
+@import "pages.scss";
 @import "game.scss";
-@import "requests_section.scss";
+@import "api.scss";
 @import "utils.scss";

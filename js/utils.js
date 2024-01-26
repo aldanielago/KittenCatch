@@ -1,3 +1,24 @@
+let isMusicPlaying = true;
+
+function toggleMusic(){
+  if(isMusicPlaying){
+    music_before_game.volume = 0;
+    music_during_game.volume = 0;
+    music_after_game.volume = 0;
+    music_countdown.volume = 0;
+    meow.volume = 0;
+    i_play_music.src = "../assets/volume-mute.svg";
+  } else {
+    music_before_game.volume = 1;
+    music_during_game.volume = 1;
+    music_after_game.volume = 0.5;
+    music_countdown.volume = 1;
+    meow.volume = 1;
+    i_play_music.src = "../assets/volume-down.svg";
+  }
+  isMusicPlaying = !isMusicPlaying;
+}
+
 function sw_succes(message){
   const succes = () =>{
     swal({
