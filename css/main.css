@@ -1,6 +1,19 @@
 * {
-  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.general-bg {
+  z-index: -10;
+  width: 100vw;
+  height: 100vh;
+  background-color: #F1D3B3;
+  background-image: radial-gradient(circle at center, #ba685a 1px, transparent 2px);
+  background-size: 16px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes girar {
@@ -91,36 +104,21 @@
     transform: translateX(90px) rotate(-48deg);
   }
 }
-@keyframes slide-top {
+@keyframes blob-bounce {
   0% {
-    transform: translate(-500px, 0px);
+    transform: translate(-10%, -10%);
+  }
+  25% {
+    transform: translate(150%, 0px);
+  }
+  50% {
+    transform: translate(150%, 200%);
+  }
+  75% {
+    transform: translate(-50%, 200%);
   }
   100% {
-    transform: translate(-500px, -500px);
-  }
-}
-@keyframes slide-top-phone {
-  0% {
-    transform: translate(-130px, 0px);
-  }
-  100% {
-    transform: translate(-130px, -700px);
-  }
-}
-@keyframes slide-bottom {
-  0% {
-    transform: translate(-130px, -500px);
-  }
-  100% {
-    transform: translate(-130px, 0px);
-  }
-}
-@keyframes slide-bottom-end {
-  0% {
-    transform: translate(-450px, -500px);
-  }
-  100% {
-    transform: translate(-450px, 20%);
+    transform: translate(-10%, -10%);
   }
 }
 @keyframes disappear {
@@ -131,190 +129,12 @@
     opacity: 0;
   }
 }
-.welcome-page, .end-game-section {
-  transition: transform 0.5s ease-in-out;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 30%);
-  width: 70vw;
-  height: 60vh;
-  border-radius: 14px;
-  z-index: 1;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.end-game-section {
-  height: 78vh;
-  top: 10%;
-  transform: translate(-50%, 0%);
-}
-
-.welcome-page h1, .end-game-section h1 {
-  color: white;
-  font-family: "Kalam", cursive;
-  text-align: center;
-  font-size: 3rem;
-  padding-top: 18px;
-  margin: 0px;
-}
-
-.welcome-page p, .end-game-section p {
-  color: white;
-  font-family: "Open Sans", sans-serif;
-  text-align: center;
-  font-size: 1.5rem;
-  padding-top: 18px;
-  letter-spacing: 2px;
-  margin: 0px;
-}
-
-.p-gift {
-  text-decoration: underline;
-}
-
-.p-gift:hover {
-  cursor: pointer;
-}
-
-.bg {
-  position: absolute;
-  width: 98%;
-  height: 95%;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.95);
-  -webkit-backdrop-filter: blur(24px);
-          backdrop-filter: blur(24px);
-  border-radius: 10px;
-  overflow: hidden;
-  background-color: #ba685a;
-}
-
-.blob {
-  position: absolute;
-  z-index: 1;
-  top: 0px;
-  left: 0px;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: rgb(204, 201, 201);
-  opacity: 1;
-  filter: blur(12px);
-  animation: blob-bounce 4s infinite ease;
-  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.5);
-}
-
-.btn-start {
-  position: absolute;
-  background-color: inherit;
-  border: none;
-  border-radius: 50px;
-  color: white;
-  bottom: 10%;
-  left: 45%;
-  z-index: 30;
-}
-
-.border-button {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  bottom: 7%;
-  left: 44%;
-  transform: translateX(-50%) rotate(0deg);
-  z-index: 20;
-  border: 5px dotted rgb(204, 201, 201);
-  border-radius: 50%;
-  animation: girar 4s infinite linear;
-}
-
-.btn-start:hover {
-  cursor: pointer;
-}
-
-.btn-start img {
-  width: 90px;
-  color: white;
-}
-
-.paw1 {
-  position: absolute;
-  bottom: -5px;
-  right: auto;
-  left: 5%;
-  transform: rotate(12deg);
-  z-index: 100;
-}
-
-.paw2 {
-  position: absolute;
-  bottom: -8px;
-  right: auto;
-  left: 12%;
-  transform: rotate(-15deg);
-  z-index: 100;
-}
-
-.paw3 {
-  position: absolute;
-  bottom: -8px;
-  right: auto;
-  left: 20%;
-  transform: rotate(15deg);
-  z-index: 100;
-}
-
-.paw4 {
-  position: absolute;
-  bottom: -5px;
-  right: 20%;
-  left: auto;
-  transform: rotate(-12deg);
-  z-index: 100;
-}
-
-.paw5 {
-  position: absolute;
-  bottom: -6px;
-  right: 12%;
-  left: auto;
-  transform: rotate(12deg);
-  z-index: 100;
-}
-
-.paw6 {
-  position: absolute;
-  bottom: -8px;
-  right: 5%;
-  left: auto;
-  transform: rotate(-15deg);
-  z-index: 100;
-}
-
-.general-bg {
-  z-index: -10;
-  height: 100%;
-  width: 100%;
-  background-color: #F1D3B3;
-  background-image: radial-gradient(circle at center, #ba685a 1px, transparent 2px);
-  background-size: 16px 16px;
-}
-
-.phone {
-  transition: transform 0.5s ease-in-out;
+.game-section {
   position: relative;
   background: #C8B6A6;
   overflow: hidden;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 300px;
-  height: 550px;
+  width: 100vw;
+  height: 100vh;
   border: 7px solid #ba685a;
   box-shadow: 0px 0px 15px 3px #8a7586;
   border-radius: 30px;
@@ -389,7 +209,7 @@
 .text-score, .counter-during-game {
   color: #ba685a;
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Comic Neue", cursive;
 }
 
 .counter-game-container {
@@ -569,8 +389,127 @@
   animation-delay: 3s;
 }
 
+@media (min-width: 426px) {
+  .game-section {
+    width: 425px;
+    height: 519px;
+    border-radius: 20px;
+  }
+}
+.section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1111;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-content {
+  position: absolute;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #ba685a;
+  width: 95%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.blob {
+  position: absolute;
+  z-index: 1;
+  top: -10%;
+  left: -10%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgb(204, 201, 201);
+  opacity: 1;
+  filter: blur(12px);
+  animation: blob-bounce 5s infinite ease;
+  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.5);
+}
+
+.cute-title {
+  font-family: "Kalam", cursive;
+  font-size: 2.5rem;
+  color: #F1D3B3;
+  text-align: center;
+  padding-top: 10%;
+}
+
+.regular-text {
+  padding-top: 5%;
+  font-family: "Comic Neue", cursive;
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+}
+
+.container-dinamic-button {
+  position: relative;
+  width: 125px;
+  height: 125px;
+  margin: 0 auto;
+}
+
+.dinamic-button {
+  position: absolute;
+  background-color: inherit;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  z-index: 30;
+  top: 15px;
+  left: 15px;
+}
+.dinamic-button img {
+  width: 90px;
+  color: white;
+}
+.dinamic-button:hover {
+  cursor: pointer;
+}
+
+.border-button {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: 5px dotted rgb(204, 201, 201);
+  border-radius: 50%;
+  z-index: 2;
+  animation: girar 4s infinite linear;
+}
+
+.btn-start:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 426px) {
+  .section {
+    width: 425px;
+    height: 519px;
+    border-radius: 20px;
+  }
+}
 .api-section {
   width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
 }
 
 .img_cat {
@@ -595,30 +534,8 @@
   cursor: pointer;
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 90%;
-}
-
 .relative {
   position: relative;
-}
-
-.go-up {
-  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-.go-up-phone {
-  animation: slide-top-phone 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-.go-down {
-  animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-.go-down-end-game {
-  animation: slide-bottom-end 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .none {

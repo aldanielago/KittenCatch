@@ -9,12 +9,27 @@ $very-light-brown: #C8B6A6;
 $light-purple: #8a7586;
 $gray: rgb(204, 201, 201);
 $font-kalam: 'Kalam', cursive;
-$font-open-sans: 'Open Sans', sans-serif;
+$font-comic: 'Comic Neue', cursive;
+$phone-width: 325px;
+$phone-height: $phone-width * 1.5;
 
-
+// Global
 * {
-  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.general-bg {
+  z-index: -10;
+  width: 100vw;
+  height: 100vh;
+  background-color: $very-light-orange;
+  background-image: radial-gradient(circle at center, $brown 1px, transparent 2px);
+  background-size: 16px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // Mixins
@@ -139,69 +154,25 @@ $font-open-sans: 'Open Sans', sans-serif;
   }
 }
 
-@-webkit-keyframes slide-top {
+@keyframes blob-bounce {
   0% {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
+    transform: translate(-10%, -10%);
   }
-  100% {
-    -webkit-transform: translate(0px, -500px);
-            transform: translate(0px, -500px);
-  }
-}
 
-@keyframes slide-top {
-  0% {
-    -webkit-transform: translate(-500px, 0px);
-    transform: translate(-500px, 0px);
+  25% {
+    transform: translate(150%, 0px);
   }
-  100% {
-    -webkit-transform: translate(-500px, -500px);
-    transform: translate(-500px, -500px);
-  }
-}
 
-@-webkit-keyframes slide-top-phone {
-  0% {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
+  50% {
+    transform: translate(150%, 200%);
   }
-  100% {
-    -webkit-transform: translate(0px, -500px);
-            transform: translate(0px, -500px);
-  }
-}
 
-@keyframes slide-top-phone {
-  0% {
-    -webkit-transform: translate(-130px, 0px);
-            transform: translate(-130px, 0px);
+  75% {
+    transform: translate(-50%, 200%);
   }
-  100% {
-    -webkit-transform: translate(-130px, -700px);
-            transform: translate(-130px, -700px);
-  }
-}
 
-@keyframes slide-bottom {
-  0% {
-    -webkit-transform: translate(-130px, -500px);
-            transform: translate(-130px, -500px);
-  }
   100% {
-    -webkit-transform: translate(-130px, 0px);
-            transform: translate(-130px, 0px);
-  }
-}
-
-@keyframes slide-bottom-end {
-  0% {
-    -webkit-transform: translate(-450px, -500px);
-            transform: translate(-450px, -500px);
-  }
-  100% {
-    -webkit-transform: translate(-450px, 20%);
-            transform: translate(-450px, 20%);
+    transform: translate(-10%, -10%);
   }
 }
 
@@ -214,7 +185,7 @@ $font-open-sans: 'Open Sans', sans-serif;
   }
 }
 
-@import "pages.scss";
 @import "game.scss";
+@import "sections.scss";
 @import "api.scss";
 @import "utils.scss";

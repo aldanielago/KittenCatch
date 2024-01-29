@@ -7,34 +7,28 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
 	<title>Catch the paw</title>
 </head>
 <body class="general-bg">
-	<section class="welcome-page">
-		<div class="bg">
-			<h1>Catch the paw</h1>
-			<p>Click the most paws possible in 10 secs!</p>
-			<button type="button" class="btn-start" onclick="start_game()">
-				<img src="./assets/play-circle.svg">
-			</button>
-			<div class="border-button"></div>
-			<img class="paw paw1" src="./assets/pata1.png" alt="cute paw">
-			<img class="paw paw2" src="./assets/pata2.png" alt="cute paw">
-			<img class="paw paw3" src="./assets/pata3.png" alt="cute paw">
-			<img class="paw paw4" src="./assets/pata5.png" alt="cute paw">
-			<img class="paw paw5" src="./assets/pata6.png" alt="cute paw">
-			<img class="paw paw6" src="./assets/pata7.png" alt="cute paw">
+	<section id="first-section" class="section">
+		<div class="inner-content">
+			<h1 class="cute-title">Catch the paw</h1>
+			<p class="regular-text">Click the most paws possible in 10 secs!</p>
+			<div class="container-dinamic-button">
+				<button type="button" class="dinamic-button" onclick="start_game()">
+					<img src="./assets/play-circle.svg">
+				</button>
+				<div class="border-button"></div>
+			</div>
 		</div>
 		<div class="blob"></div>
 	</section>
-	<button class="container-music" type="button" onclick="toggleMusic()">
+	<!-- <button class="container-music" type="button" onclick="toggleMusic()">
 		<img id="i-play-music" src="./assets/volume-down.svg">
-	</button>
+	</button> -->
 
-	<section class="phone none">
+	<section id="game-section" class="game-section none">
 		<div class="layer paw">
 			<img src="./assets/pata1.png">
 		</div>
@@ -75,27 +69,20 @@
 		</div>
 	</section>
 
-	<section class="end-game-section none">
-		<div class="bg">
-			<h1>Well done!</h1>
-			<p>Your score is: <span id="score-end-game">0</span></p>
-			<p>Best score is: <span id="best-score">0</span></p>
-			<p class="p-gift">We have a gift for you!</p>
-			<p>Play again!</p>
-			<button type="button" class="btn-start" onclick="start_game()">
-				<img src="./assets/play-circle.svg">
-			</button>
-			<div class="border-button"></div>
-			<img class="paw1" src="./assets/pata1.png" alt="cute paw">
-			<img class="paw2" src="./assets/pata2.png" alt="cute paw">
-			<img class="paw3" src="./assets/pata3.png" alt="cute paw">
-			<img class="paw4" src="./assets/pata5.png" alt="cute paw">
-			<img class="paw5" src="./assets/pata6.png" alt="cute paw">
-			<img class="paw6" src="./assets/pata7.png" alt="cute paw">
+	<section id="last-section" class="section none">
+		<div class="inner-content">
+			<h1 class="cute-title">Well done!</h1>
+			<p class="regular-text">Your score is: <span id="score-end-game">0</span></p>
+			<p class="regular-text">Best score is: <span id="best-score">0</span></p>
+			<p class="regular-text">We have a gift for you!</p>
+			<p class="regular-text">Play again!</p>
+			<div class="container-dinamic-button">
+				<button type="button" class="dinamic-button" onclick="start_game()">
+					<img src="./assets/play-circle.svg">
+				</button>
+				<div class="border-button"></div>
+			</div>
 		</div>
-		<button class="container-music" type="button" onclick="toggleMusic()">
-			<img id="i-play-music" src="./assets/volume-down.svg">
-		</button>
 		<div class="blob"></div>
 	</section>
 
@@ -118,7 +105,7 @@
 	<audio id="music-during-game" src="./assets/music-during.mp3"></audio>
 	<audio id="music-after-game" src="./assets/music-end.mp3"></audio>
 	<audio id="music-countdown" src="./assets/music-countdown.mp3"></audio>
-	<audio id="meow" src="./assets/meow3.mp3"></audio>
+	<audio id="meow" src="./assets/meow.mp3"></audio>
 
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="./js/dom.js"></script>

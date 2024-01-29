@@ -5,7 +5,7 @@ const score = document.querySelector('#score');
 const paws = document.querySelectorAll('.paw');
 
 // Welcome page
-const first_section = $('.welcome-page');
+const first_section = $('#first-section');
 const i_play_music = $('#i-play-music');
 
 // 3 seconds before game
@@ -15,11 +15,11 @@ const border_reverse_counter = $('.border-button-blur');
 
 // During the game
 const game_counter = $('.counter-during-game');
-const game_section = $('.phone');
+const game_section = $('#game-section');
 
 // End game
 const container_end_game = $('.container-after-game');
-const section_end_game = $('.end-game-section');
+const section_end_game = $('#last-section');
 const game_score = $('#score-end-game');
 const best_score = $('#best-score');
 

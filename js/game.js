@@ -14,14 +14,15 @@ paws.forEach(paw => {
 
 function start_game() {
   count = 0;
-  first_section.classList.add('go-up');
+  // first_section.classList.add('go-up');
   setTimeout(() => {
     first_section.classList.add('none');
+    section_end_game.classList.add('none');
     game_section.classList.remove('none');
-    game_section.classList.add('go-down');
+    // game_section.classList.add('go-down');
     counter_before_game()
     container_before_game.classList.remove('none');
-    game_section.classList.remove('go-up-phone');
+    // game_section.classList.remove('go-up-phone');
   }, 1000);
 }
 
@@ -72,13 +73,13 @@ function end_game() {
   music_after_game.play();
   setTimeout(() => {
     container_end_game.classList.add('none');
-    game_section.classList.remove('go-down');
-    game_section.classList.add('go-up-phone');
+    // game_section.classList.remove('go-down');
+    // game_section.classList.add('go-up-phone');
   }, 2000);
   setTimeout(() => {
     game_section.classList.add('none');
     section_end_game.classList.remove('none');
-    section_end_game.classList.add('go-down-end-game');
+    // section_end_game.classList.add('go-down-end-game');
     game_score.textContent = count;
     save_score(count);
     best_score.textContent = localStorage.getItem('score');

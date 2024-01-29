@@ -2,6 +2,12 @@
   width: 100%;
 }
 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
 .img_cat {
   width: 300px;
   height: 300px;

@@ -1,0 +1,107 @@
+.section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1111;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-content {
+  position: absolute;
+  z-index: 2;
+  background: rgba(255, 255, 255, .95);
+  backdrop-filter: blur(24px);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: $brown;
+  width: 95%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.blob {
+  position: absolute;
+  z-index: 1;
+  top: -10%;
+  left: -10%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: $gray;
+  opacity: 1;
+  filter: blur(12px);
+  animation: blob-bounce 5s infinite ease;
+  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.5);
+}
+
+.cute-title {
+  font-family: $font-kalam;
+  font-size: 2.5rem;
+  color: $very-light-orange;
+  text-align: center;
+  padding-top: 10%;
+}
+
+.regular-text {
+  padding-top: 5%;
+  font-family: $font-comic;
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+}
+
+.container-dinamic-button {
+  position: relative;
+  width: 125px;
+  height: 125px;
+  margin: 0 auto;
+}
+
+.dinamic-button {
+  position: absolute;
+  background-color: inherit;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  z-index: 30;
+  top: 15px;
+  left: 15px;
+  img {
+    width: 90px;
+    color: white;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.border-button {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: 5px dotted $gray;
+  border-radius: 50%;
+  z-index: 2;
+  animation: girar 4s infinite linear;
+  
+}
+
+.btn-start:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 426px) {
+  .section {
+    width: 425px;
+    height: 519px;
+    border-radius: 20px;
+  }
+}
