@@ -74,7 +74,7 @@
 			<h1 class="cute-title">Well done!</h1>
 			<p class="regular-text">Your score is: <span id="score-end-game">0</span></p>
 			<p class="regular-text">Best score is: <span id="best-score">0</span></p>
-			<p class="regular-text">We have a gift for you!</p>
+			<button class="primary-button" onclick="go_to_api()">We have a gift for you!</button>
 			<p class="regular-text">Play again!</p>
 			<div class="container-dinamic-button">
 				<button type="button" class="dinamic-button" onclick="start_game()">
@@ -87,17 +87,22 @@
 	</section>
 
 	<section class="api-section none">
+		<h3 class="cute-title">Welcome to cat fan page!</h3>
+		<p class="regular-text">You can add a cat to your favorites.</p>
 		<div id="container-random-images" class="container">
 			<!--Content by js-->
 		</div>
-		<button class="btn-change-cat">Cambiar imagen</button>
+		<button class="btn-change-cat primary-button regular-text">Change images</button>
+		<p class="regular-text">Your favorites.</p>
 		<div id="container-favorite-images" class="container">
 			<!--Content by js-->
 		</div>
 		<form class="form-upload-kitten">
-			<label for="file">You can upload a photo of your kitten here! Select one</label>
-			<input type="file" name="file" id="file">
-			<button type="button" onclick="upload_kitten_photo()">Upload photo</button>
+			<div>
+				<label for="file" class="regular-text">You can also upload a photo of your kitten here!</label>
+				<input class="file-input" type="file" name="file" id="file">
+			</div>
+			<button type="button" class="primary-button regular-text" onclick="upload_kitten_photo()">Upload photo</button>
 		</form>
 	</section>
 

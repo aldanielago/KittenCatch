@@ -91,6 +91,11 @@ function end_game() {
   }, 5000);
 }
 
+function go_to_api() {
+  section_end_game.classList.add('none');
+  api_section.classList.remove('none');
+}
+
 function save_score(score) {
   if(!localStorage.getItem('score') || localStorage.getItem('score') < score) {
     localStorage.setItem('score', score);

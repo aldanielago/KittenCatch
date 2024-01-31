@@ -60,13 +60,18 @@ async function delete_favorite_kitten(id){
 };
 
 async function upload_kitten_photo(){
+  const form = document.querySelector('.form-upload-kitten');
   const form_data = new FormData(form);
-  const res = await fetch(`${URL}/images/upload`, object_post(form_data));
-  const data = await res.json();
 
-  post_add_favorite_kitten(data.id)
-  generate_notification(res, data, 'uploaded a photo of you kitten');
-  get_anything(`${URL}/favourites`, container_favorite_images, 'favorite');
+  if(form_data == null || form_data == undefined){
+    sw_error('Error', 'You must select a file')();
+  } else {
+    const res = await fetch(`${URL}/images/upload`, object_post(form_data));
+    const data = await res.json();
+    post_add_favorite_kitten(data.id)
+    generate_notification(res, data, 'uploaded a photo of you kitten');
+    get_anything(`${URL}/favourites`, container_favorite_images, 'favorite');
+  }
 };
 
 get_anything(`${URL}/images/search?limit=5`, container_random_images);
