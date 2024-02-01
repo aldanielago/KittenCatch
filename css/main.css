@@ -198,7 +198,7 @@
 }
 
 .container-music {
-  right: 10%;
+  right: 10px;
   top: 10px;
   transform: translate(0, 0);
 }
@@ -540,13 +540,15 @@
   font-size: 1.2rem;
   font-weight: 600;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  color: white;
+  transition: background-color 0.3s ease;
 }
 .primary-button:focus, input[type=file]:focus::before {
   outline: none;
 }
 .primary-button:hover, input[type=file]:hover::before {
   cursor: pointer;
-  background-color: #C69B7B;
+  background-color: #8a7586;
 }
 .primary-button:active, input[type=file]:active::before {
   background-color: #f4914e;

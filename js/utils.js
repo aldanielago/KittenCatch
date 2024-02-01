@@ -7,14 +7,14 @@ function toggleMusic(){
     music_after_game.volume = 0;
     music_countdown.volume = 0;
     meow.volume = 0;
-    i_play_music.src = "../assets/volume-mute.svg";
+    i_play_music.forEach(e => e.src = "../assets/volume-mute.svg")
   } else {
     music_before_game.volume = 1;
     music_during_game.volume = 1;
     music_after_game.volume = 0.5;
     music_countdown.volume = 1;
     meow.volume = 1;
-    i_play_music.src = "../assets/volume-down.svg";
+    i_play_music.forEach(e => e.src = "../assets/volume-down.svg")
   }
   isMusicPlaying = !isMusicPlaying;
 }

@@ -6,7 +6,7 @@ const paws = document.querySelectorAll('.paw');
 
 // Welcome page
 const first_section = $('#first-section');
-const i_play_music = $('#i-play-music');
+const i_play_music = document.querySelectorAll('.i-play-music');
 
 // 3 seconds before game
 const container_before_game = $('.container-counter-before-game');

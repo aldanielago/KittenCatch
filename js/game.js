@@ -91,8 +91,14 @@ function end_game() {
   }, 5000);
 }
 
+function reset_best_score() {
+  localStorage.removeItem('score');
+  best_score.textContent = 0;
+}
+
 function go_to_api() {
   section_end_game.classList.add('none');
+  first_section.classList.add('none');
   api_section.classList.remove('none');
 }
 
