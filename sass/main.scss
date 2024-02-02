@@ -11,7 +11,7 @@ $gray: rgb(204, 201, 201);
 $font-kalam: 'Kalam', cursive;
 $font-comic: 'Comic Neue', cursive;
 $phone-width: 375px;
-$phone-height: 519px;
+$phone-height: 570px;
 
 // Global
 * {
@@ -91,7 +91,7 @@ $phone-height: 519px;
     transform: translateY(0px);
   }
   10% {
-    transform: translateY(-70px);
+    transform: translateY(-90px);
   }
   90% {
     transform: translateY(0px);
@@ -121,7 +121,7 @@ $phone-height: 519px;
     left: -50px;
     transform: rotate(60deg);
   }
-  20% {
+  15% {
     left: -40px;
     transform: rotate(80deg);
   }
@@ -164,11 +164,11 @@ $phone-height: 519px;
   }
 
   50% {
-    transform: translate(150%, 200%);
+    transform: translate(150%, 220%);
   }
 
   75% {
-    transform: translate(-50%, 200%);
+    transform: translate(-50%, 220%);
   }
 
   100% {

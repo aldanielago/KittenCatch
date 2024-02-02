@@ -98,3 +98,33 @@
 .btn-start:hover {
   cursor: pointer;
 }
+
+.container-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.icon-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: $very-light-orange;
+  border: 1px solid $gray;
+  transition: all 0.3s ease;
+
+  img {
+    width: 80%;
+    color: white;
+  }
+
+  &:hover {
+    cursor: pointer;
+    img {
+      color: white;
+    }
+  }
+}

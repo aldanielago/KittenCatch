@@ -15,6 +15,9 @@
 		<div class="inner-content">
 			<h1 class="cute-title">Catch the paw</h1>
 			<p class="regular-text">Click the most paws possible in 10 secs!</p>
+			<button class="container-music-game" type="button" onclick="toggleMusic()">
+				<img class="i-play-music" src="./assets/volume-down.svg">
+			</button>
 			<div class="container-dinamic-button">
 				<button type="button" class="dinamic-button" onclick="start_game()">
 					<img src="./assets/play-circle.svg">
@@ -22,9 +25,6 @@
 				<div class="border-button"></div>
 			</div>
 			<button class="primary-button" onclick="go_to_api()">Go to cat API section</button>
-			<button class="container-music" type="button" onclick="toggleMusic()">
-				<img class="i-play-music" src="./assets/volume-down.svg">
-			</button>
 		</div>
 		<div class="blob"></div>
 	</section>
@@ -68,7 +68,7 @@
 		<div class="bg-blur container-after-game none">
 			<span class="end-game-text">End game</span>
 		</div>
-		<button class="container-music" type="button" onclick="toggleMusic()">
+		<button class="container-music-game" type="button" onclick="toggleMusic()">
 			<img class="i-play-music" src="./assets/volume-down.svg">
 		</button>
 	</section>
@@ -78,6 +78,14 @@
 			<h1 class="cute-title">Well done!</h1>
 			<p class="regular-text">Your score is: <span id="score-end-game">0</span></p>
 			<p class="regular-text">Best score is: <span id="best-score">0</span></p>
+			<div class="container-buttons">
+				<button class="icon-button" type="button" onclick="toggleMusic()">
+					<img class="i-play-music" src="./assets/volume-down.svg">
+				</button>
+				<button class="icon-button" type="button" onclick="reset_best_score()">
+					<img class="reset-icon" src="./assets/arrow-clockwise.svg">
+				</button>
+			</div>
 			<button class="primary-button" onclick="go_to_api()">We have a gift for you!</button>
 			<p class="regular-text">Play again!</p>
 			<div class="container-dinamic-button">
@@ -86,9 +94,6 @@
 				</button>
 				<div class="border-button"></div>
 			</div>
-			<button class="container-music" type="button" onclick="toggleMusic()">
-				<img class="i-play-music" src="./assets/volume-down.svg">
-			</button>
 		</div>
 		<div class="blob"></div>
 	</section>

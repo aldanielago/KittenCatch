@@ -6,7 +6,6 @@
   width: $phone-width;
   height: $phone-height;
   border: 7px solid $brown;
-  border-radius: 20px;
 
   box-shadow: 0px 0px 15px 3px $light-purple;
   border-radius: 30px;
@@ -69,7 +68,7 @@
   border: 1px solid $brown;
 }
 
-.container-music {
+.container-music-game {
   @extend .container-text;
   right: 10px;
   top: 10px;
@@ -118,21 +117,21 @@
 
 // Patita arriba derecha
 .layer:nth-child(1){
-  @include posicion(1, 90px, 90px, 100px, auto, auto, -2px, inner);
+  @include posicion(1, 90px, 90px, 140px, auto, auto, -2px, inner);
   animation: subir 2s infinite;
   animation-delay: 1s;
 }
 
 // Patita arriba izquierda
 .layer:nth-child(2){
-  @include posicion(2, 90px, 90px, 145px, auto, 16px, auto, inner);
+  @include posicion(2, 90px, 90px, 145px, auto, 30px, auto, inner);
   animation: subir 2s infinite;
   animation-delay: 2s;
 }
 
 // Patita mitad derecha
 .layer:nth-child(3){
-  @include posicion(3, 90px, 85px, 80px, auto, auto, 40px, inner);
+  @include posicion(3, 90px, 85px, 50px, auto, auto, 40px, inner);
   transform: rotate(-90deg);
 
   transform-origin: bottom right;
@@ -142,45 +141,45 @@
 
 // Pared
 .layer:nth-child(4){
-  @include posicion(4, 120px, 200px, 100px, auto, auto, 0, $light-orange);
+  @include posicion(4, 120px, 200px, 130px, auto, auto, 0, $light-orange);
   border: 2px solid $light-brown;
   border-radius: 20px;
 }
 
 // Pared
 .layer:nth-child(5){
-  @include posicion(5, 120px, 210px, 150px, auto, 0, auto, $brown);
+  @include posicion(5, 140px, 210px, 150px, auto, 0, auto, $brown);
   border: 2px solid $light-brown;
   border-radius: 20px;
 }
 
 // Patita izquierda borde
 .layer:nth-child(6){
-  @include posicion(6, 90px, 120px, 160px, auto, -120px, auto, inner);
+  @include posicion(6, 90px, 130px, 120px, auto, -120px, auto, inner);
   transform: rotate(50deg);
 
   transform-origin: bottom left;
   animation: subir_derecho 1s infinite;
-  animation-delay: 7s;
+  animation-delay: 1s;
 }
 
 // Patita
 .layer:nth-child(7){
-  @include posicion(7, 90px, 90px, 245px, auto, auto, 15px, inner);
+  @include posicion(7, 90px, 90px, 275px, auto, auto, 15px, inner);
   animation: subir 2s infinite;
   animation-delay: 3.6s;
 }
 
 // Pared
 .layer:nth-child(8){
-  @include posicion(8, 190px, 210px, 250px, auto, auto, 0, $very-light-orange);
+  @include posicion(8, 190px, 210px, 280px, auto, auto, 0, $very-light-orange);
   border: 2px solid $light-brown;
   border-radius: 20px;
 }
 
 // Pared
 .layer:nth-child(9){
-  @include posicion(9, 190px, 210px, auto, 0, 0, auto, $orange);
+  @include posicion(9, 200px, 230px, auto, 0, 0, auto, $orange);
   border: 2px solid $brown;
   border-radius: 20px;
 }
