@@ -15,7 +15,7 @@
 		<div class="inner-content">
 			<h1 class="cute-title">Catch the paw</h1>
 			<p class="regular-text">Click the most paws possible in 10 secs!</p>
-			<button class="container-music-game" type="button" onclick="toggleMusic()">
+			<button class="container-music-game" type="button" onclick="toggle_music()">
 				<img class="i-play-music" src="./assets/volume-down.svg">
 			</button>
 			<div class="container-dinamic-button">
@@ -79,7 +79,7 @@
 			<p class="regular-text">Your score is: <span id="score-end-game">0</span></p>
 			<p class="regular-text">Best score is: <span id="best-score">0</span></p>
 			<div class="container-buttons">
-				<button class="icon-button" type="button" onclick="toggleMusic()">
+				<button class="icon-button" type="button" onclick="toggle_music()">
 					<img class="i-play-music" src="./assets/volume-down.svg">
 				</button>
 				<button class="icon-button" type="button" onclick="reset_best_score()">
@@ -99,6 +99,9 @@
 	</section>
 
 	<section class="api-section none">
+		<button type="button" class="back-button" onclick="go_to_game()">
+			<img src="./assets/arrow-left-circle-fill.svg">
+		</button>
 		<h3 class="cute-title">Welcome to cat fan page!</h3>
 		<p class="regular-text">You can add a cat to your favorites.</p>
 		<div id="container-random-images" class="container">

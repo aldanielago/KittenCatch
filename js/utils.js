@@ -1,6 +1,6 @@
 let isMusicPlaying = true;
 
-function toggleMusic(){
+function toggle_music(){
   if(isMusicPlaying){
     music_before_game.volume = 0;
     music_during_game.volume = 0;

@@ -128,3 +128,19 @@
     }
   }
 }
+
+.back-button {
+  background: inherit;
+  border: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  img {
+    width: 40px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
