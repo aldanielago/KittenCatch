@@ -102,6 +102,11 @@ function go_to_api() {
   api_section.classList.remove('none');
 }
 
+function go_to_game() {
+  api_section.classList.add('none');
+  first_section.classList.remove('none');
+}
+
 function save_score(score) {
   if(!localStorage.getItem('score') || localStorage.getItem('score') < score) {
     localStorage.setItem('score', score);
